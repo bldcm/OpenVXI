@@ -1,0 +1,73 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>typedef enum  <A HREF="#DOC.DOCU">VXIValueStringFormat</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE> Formats for the string result of VXIValueToString, currently:</BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Formats for the string result of VXIValueToString, currently:
+
+<P>VALUE_FORMAT_URL_QUERY_ARGS
+
+<P>URL query argument format as specified in IETF RFC 2396. Note: this
+encoding is not appropriate for generically serializing and later
+restoring VXIValue based types, see below.
+
+<P>This will return a string of the format
+"key1=value1&key2=value2[...]" where '=' seperates keys and '&'
+seperates key/value pairs. Map keys are output by using dot
+notation such as "mymap.mymember=true" for "mymember" in "mymap".
+Similarly, vector keys are output using dot notation, such as
+"myvec.1=200" for myvec element 1. This dot notation may be
+arbitrarily deep for handling nested maps/vectors. Boolean values
+are output as "true" or "false", and VXIContent values are encoded
+by inserting the escaped bytes (see below).
+
+<P>As required by IETF RFC 2396, all keys and values are escaped to
+ensure the resulting string is only composed of a subset of visible
+ASCII characters. All other characters/bytes (including a percent
+sign) are encoded as a percent sign followed by the byte value such
+as "%20" for a space. Since VXIMap key names and VXIStrings are
+wchar_t based data that may include Unicode characters, each
+character in those are first converted to the Unicode UTF-8
+character encoding (where each character is represented by 1 to 6
+bytes, with the UTF-8 byte code and ASCII byte codes identical for
+the ASCII character set, and Latin 1 [ISO-8859] and Unicode
+characters consuming 2 or more bytes), then each byte is escaped as
+necessary. NOTE: The use of UTF-8 to encode Latin 1 and Unicode
+characters is SpeechWorks defined and thus may not seemlessly
+interoperate with other software: IETF RFC 2396 acknoledges the
+issue of the transmission of non-ASCII character set characters,
+and allows for the use of UTF-8, but does not mandate the use of
+UTF-8 to solve this problem and thus encoding choices vary between
+systems (although UTF-8 is the clearest choice).
+
+<P>Note that with this format the types of each key is ambiguous: for
+example the VXIString "100" and the VXIInteger 100 have an
+identical representation, and VXIContent byte streams are not
+distinguishable from other types (particulary VXIStrings) unless
+they contain byte codes that are not permissable in the other
+types, such as NULL (0) bytes.  When used for HTTP operations, this
+ambiguity is not an issue, as the target CGI/servlet/etc. knows
+what data to expect and thus the appropriate data type for each
+key. Thus while useful for serializing and transmitting application
+defined data over HTTP or other ASCII based protocols for delivery
+to the application elsewhere, this encoding is not appropriate for
+generically serializing and later restoring VXIValue based types.</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

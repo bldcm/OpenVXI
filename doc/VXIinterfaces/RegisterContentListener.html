@@ -1,0 +1,36 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIlogResult.html">VXIlogResult</A> <A HREF="#DOC.DOCU">RegisterContentListener</A></H2></TD><TD><H2>( struct SBlogInterface* pThis,<BR>&nbsp; <!1><A HREF="SBlogContentListener.html">SBlogContentListener</A>* alistener,<BR>&nbsp;  void* userdata)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Subscribe the given listener for content write requests </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+The given listener will be notified for all content write
+requests (via VXIlog::ContentOpen( ) calls) as each request is 
+processed by SBlog. The call cannot be disabled.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>alistener</B> -   [IN] Subscribing listener 
+<BR><B>userdata</B> -    [IN] User <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> that will be returned to the 
+listener when notification occurs.
+Note: the same listener may be 
+registered multiple times, as long
+as unique userdata is passed. In this
+case, the listener will be called once
+for each unique userdata.
+<BR><DT><B>Returns:</B><DD>  VXIlog_RESULT_SUCCESS:       success
+<BR>  VXIlog_RESULT_SYSTEM_ERROR:  internal error
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

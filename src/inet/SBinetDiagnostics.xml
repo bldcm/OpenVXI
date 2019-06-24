@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) 2001 SpeechWorks International -->
+<DiagnosticMessages moduleName="*SBinet">
+    <diag tag="0">SBinet: API trace </diag>
+    <diag tag="1">SBinet: Channel diagnostics </diag>
+    <diag tag="2">SBinet: Stream diagnostics </diag>
+    <diag tag="3">SBinet: Cookie diagnostics </diag>
+    <diag tag="4">SBinet: Validator diagnostics </diag>
+    <diag tag="5">SBinet: Cache diagnostics </diag>
+    <diag tag="6">SBinet: Timing diagnostics </diag>
+    <diag tag="10">SBinet: Dump HTTP requests and responses </diag>
+
+</DiagnosticMessages>

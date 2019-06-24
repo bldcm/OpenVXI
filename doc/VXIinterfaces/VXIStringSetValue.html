@@ -1,0 +1,37 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>VXIVALUE_API <!1><A HREF="VXIvalueResult.html">VXIvalueResult</A> <A HREF="#DOC.DOCU">VXIStringSetValue</A></H2></TD><TD><H2>(VXIString* s,<BR>&nbsp; const VXIchar* str)</H2></TD></TR></TABLE>
+<BLOCKQUOTE> Set the value of a String from a null-terminated character array</BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Set the value of a String from a null-terminated character array
+
+<P>Note: this functionality is provided to allow defining interfaces
+where the caller passes in a VXIString from VXIStringCreate( )
+(typically with an empty string as its value) with the interface
+changing that value to return a string as output. This avoids
+having to define interfaces where the client has to provide a
+fixed length buffer (and thus worry about "buffer too small" errors
+and complicated handling).
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>s</B> -      String to change the value of
+<BR><B>str</B> -    NULL-terminated character array
+<BR><DT><B>Returns:</B><DD>  VXIvalue_RESULT_SUCCESS on success <BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

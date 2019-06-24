@@ -1,0 +1,37 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIscResult.html">VXIscResult</A> <A HREF="#DOC.DOCU">WaitForCall</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIscInterface.html">VXIscInterface</A>* pThis)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Re-arm the telephony interface for new calls </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+This call is blocking. When it returns the telephony interface
+must be ready to accept calls and generate events. <p> 
+
+<P>The hardware interface must start-up in an out-of-service (OOS)
+state.  In this state, no events will be generated and calls
+should be blocked (if possible) or rejected. The best
+implementation is to arrange for the line to be out of service
+back to the switch so that failover to the next line occurs at
+the switch level. For some protocols this can be done by setting
+the line to a busy state. <p>
+
+<P>A hangup or error on the line should place the hardware back into
+the OOS state so that no calls come into the line until it is
+explictly re-armed by calling this function again. <p>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Returns:</B><DD>  VXIsc_RESULT_SUCCESS on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

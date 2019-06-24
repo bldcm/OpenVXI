@@ -1,0 +1,63 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIcacheResult.html">VXIcacheResult</A> <A HREF="#DOC.DOCU">Open</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIcacheInterface.html">VXIcacheInterface</A>* pThis,<BR>&nbsp; const VXIchar* moduleName,<BR>&nbsp; const VXIchar* key,<BR>&nbsp; <!1><A HREF="VXIcacheOpenMode.html">VXIcacheOpenMode</A> mode,<BR>&nbsp; VXIint32 flags,<BR>&nbsp; const VXIMap* properties,<BR>&nbsp; VXIMap* streamInfo,<BR>&nbsp; VXIcacheStream** stream)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Open a stream for reading or writing given a wide character key NOTE: OpenEx( ) is the same but supports binary keys </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+If the cache entry is currently in use and a stream cannot be returned
+because this use locks the entry, Open should return 
+VXIcache_RESULT_ENTRY_LOCKED. <p>
+
+<P>The behavior of opening a cache entry for reading during a write
+operation is implementation defined. <p>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>moduleName</B> -    [IN] Name of the software module that is 
+writing or reading the data. See the top of 
+VXIlog.h for moduleName allocation rules.
+<BR><B>key</B> -           [IN] Key name of the <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> to access, NULL
+terminated VXIchar based string that may be
+of an arbitrary length
+<BR><B>mode</B> -          [IN] Mode to open the <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> with, a CACHE_MODE
+value as defined above
+<BR><B>flags</B> -         [IN] Flags to control the open:
+<!1><A HREF="CACHE_FLAG_LOCK.html">CACHE_FLAG_LOCK</A>, lock retrieved <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> in the
+<!1><A HREF="cache.html">cache</A> so it is not flushed (although may be
+flushed from the memory <!1><A HREF="cache.html">cache</A> to the disk <!1><A HREF="cache.html">cache</A>)
+<!1><A HREF="CACHE_FLAG_LOCK_MEMORY.html">CACHE_FLAG_LOCK_MEMORY</A>, lock retrieved <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A>
+in the memory <!1><A HREF="cache.html">cache</A> so it is not flushed
+(not even to the disk <!1><A HREF="cache.html">cache</A>), note that some
+implementations may ignore this and simply
+treat this as CACHE_FLAG_LOCK.
+<!1><A HREF="CACHE_FLAG_NONBLOCKING_IO.html">CACHE_FLAG_NONBLOCKING_IO</A>, non-blocking reads and
+writes, although the open and close is still
+blocking
+<BR><B>properties</B> -    [IN] Properties to control the open, as listed
+above. May be NULL.
+<BR><B>streamInfo</B> -    [OUT] (Optional, pass NULL if not required.) Map
+that will be populated with information about 
+the stream, the CACHE_INFO_[...] keys listed
+above are mandatory with the implementation 
+possibly setting other keys.  This may not be 
+populated on an open for WRITE since that is 
+creating a new file.
+<BR><B>stream</B> -        [OUT] Handle to the opened stream
+<BR><DT><B>Returns:</B><DD>  VXIcache_RESULT_SUCCESS on success
+<BR>  VXIcache_RESULT_ENTRY_LOCKED if the entry is in used and 
+cannot be returned. Returned if a writer has the entry open.
+<BR>  VXIcache_RESULT_NULL_STREAM if the stream that was passed in 
+or the interface is NULL <BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

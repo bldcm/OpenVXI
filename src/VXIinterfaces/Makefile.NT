@@ -1,0 +1,40 @@
+#***************License************************************************
+#
+# Copyright 2000-2002.  SpeechWorks International, Inc.  All rights reserved.
+#
+# Use of this software is subject to certain restrictions and limitations
+# set forth in a license agreement entered into between SpeechWorks
+# International Inc. and the licensee of this software.  Please refer 
+# to the license agreement for license use rights and restrictions. 
+#
+# SpeechWorks is a registered trademark, and SpeechWorks Here,
+# DialogModules and the SpeechWorks logo are trademarks of SpeechWorks
+# International, Inc. in the United States and other countries.
+# 
+#**********************************************************************
+#
+# VXIinterfaces, OpenSpeech Browser VXI interfaces
+# Windows make file 
+#
+#
+#**********************************************************************/
+
+#--------------------------------
+# Required Environment Variables
+#--------------------------------
+
+!ifndef SWISBSDK
+!error The SWISBSDK environment variable is not defined.
+!endif
+
+all: mkalldirs headers
+
+mkalldirs:
+	-mkdir  $(SWISBSDK)\include
+	-mkdir  $(SWISBSDK)\bin
+	-mkdir  $(SWISBSDK)\lib
+	-mkdir  $(SWISBSDK)\config
+	  
+headers:
+	copy /y *.h $(SWISBSDK)\include
+  

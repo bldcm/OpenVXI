@@ -1,0 +1,40 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIinetResult.html">VXIinetResult</A> <A HREF="#DOC.DOCU">SetCookieJar</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIinetInterface.html">VXIinetInterface</A>* pThis,<BR>&nbsp; const VXIVector* jar)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Set the cookie jar </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+The cookie jar is used to provide cookies and store cookies
+during future VXIinet Prefetch( ) and Open( ) operations. Expired
+cookies within the jar will not be used. Each time this is called
+the prior cookie jar is discarded, the caller is responsible for
+persistent storage of the cookie jar if desired. See
+GetCookieJar( ) for details.
+
+<P>If SetCookieJar( ) is never called, or if it is called with a
+NULL jar, the VXIinet implementation will refuse to accept
+cookies for fetches.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>jar</B> -      [IN] Cookie jar, specified as a VXIVector (see the
+description of the cookie jar structure above).
+Pass NULL to refuse all cookies. Pass an empty
+VXIVector to accept new cookies starting with an
+empty jar. Pass a non-empty VXIVector as returned
+by <!1><A HREF="GetCookieJar.html">GetCookieJar</A>( ) to implement persist cookies
+across multiple user sessions (telephone calls).
+<BR><DT><B>Returns:</B><DD>  VXIinet_RESULT_SUCCESS on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

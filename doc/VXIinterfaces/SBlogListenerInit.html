@@ -1,0 +1,70 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>SBLOGLISTENERS_API <!1><A HREF="VXIlogResult.html">VXIlogResult</A> <A HREF="#DOC.DOCU">SBlogListenerInit</A></H2></TD><TD><H2>( const VXIchar* filename,<BR>&nbsp; VXIint32 maxLogSizeBytes,<BR>&nbsp; <!1><A HREF="VXIbool.html">VXIbool</A> logToStdout,<BR>&nbsp; <!1><A HREF="VXIbool.html">VXIbool</A> keepLogFileOpen )</H2></TD></TR></TABLE>
+<BLOCKQUOTE> Global platform initialization of SBlogListeners</BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Global platform initialization of SBlogListeners
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>filename</B> -           Name of the file where diagnostic, error, and 
+event information will be written. Pass NULL 
+to disable logging to a file.
+<BR><B>fileMimeType</B> -       MIME <!1><A HREF="VXIapPlayListNode.html#DOC.8.1.3.3">content</A> type for the <!1><A HREF="log.html">log</A> file, currently
+<!1><A HREF="SBLOG_MIME_TEXT_LATIN1.html">SBLOG_MIME_TEXT_LATIN1</A> or SBLOG_MIME_TEXT_UTF8
+as defined above, with <!1><A HREF="SBLOG_MIME_TEXT_LATIN1.html">SBLOG_MIME_TEXT_LATIN1</A>
+used if NULL or an empty string is passed.
+<BR><B>maxLogSizeBytes</B> -    Maximum size of the <!1><A HREF="log.html">log</A> file, in bytes. When
+this size is exceeded, the <!1><A HREF="log.html">log</A> file is rotated,
+with the existing file moved to a backup name
+(<filename>.old) and a new <!1><A HREF="log.html">log</A> file started.
+<BR><B>contentDir</B> -         Directory to use for storing large (potentially
+binary) <!1><A HREF="VXIapPlayListNode.html#DOC.8.1.3.3">content</A> that is logged, such as VoiceXML
+documents or waveforms
+<BR><B>maxContentDirSize</B> -  Maximum size, in Bytes, of the <!1><A HREF="VXIapPlayListNode.html#DOC.8.1.3.3">content</A> logging
+directory (NOTE: currently not implemented, but
+will be in a future release)
+<BR><B>logToStdout</B> -        TRUE to <!1><A HREF="log.html">log</A> diagnostic and error messages to
+standard out, <!1><A HREF="FALSE.html">FALSE</A> to disable. <!1><A HREF="Event.html">Event</A> reports
+are never logged to standard out.
+<BR><B>keepLogFileOpen</B> -    TRUE to keep the <!1><A HREF="log.html">log</A> file continuously open,
+<!1><A HREF="FALSE.html">FALSE</A> to close it when not logging. Performance
+is much better if it is kept open, but doing
+so prevents system operators from manually
+rotating the <!1><A HREF="log.html">log</A> file when desired (simply
+moving it to a new name from the command line,
+with a new <!1><A HREF="log.html">log</A> file being automatically created).
+<BR><B>reportErrorText</B> -    TRUE to load the XML error mapping files as
+passed in errorMapFiles at startup so that when
+errors are logged the appropriate error text
+from the XML error mapping file is displayed.
+If <!1><A HREF="FALSE.html">FALSE</A>, only the error number and module name
+are displayed, with the system operator or
+operations console software responsible for
+the error text lookup. TRUE is best for
+out-of-the-box developer use, while <!1><A HREF="FALSE.html">FALSE</A> is
+best for production use (minimizes error
+reporting overhead and network bandwidth for
+transporting errors to the remote console).
+<BR><B>errorMapFiles</B> -      Vector of paths to the XML error mapping files
+that maps error numbers to text for a specific
+component. Used when reportErrorText is TRUE,
+see above.
+@result <!1><A HREF="VXIlog_RESULT_SUCCESS.html">VXIlog_RESULT_SUCCESS</A> on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

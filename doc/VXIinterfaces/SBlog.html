@@ -1,0 +1,103 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">SBlog</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>SBlog implementation of VXIlog </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlogStream"></A>
+<A HREF=SBlogStream.html><B>SBlogStream</B></A></TD><TD><BR>
+<I>SBlog definition of a VXIlogStream </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlogErrorListener"></A>
+<A HREF=SBlogErrorListener.html><B>SBlogErrorListener</B></A></TD><TD><BR>
+<I>Prototype for error listener notification </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlogDiagnosticListener"></A>
+<A HREF=SBlogDiagnosticListener.html><B>SBlogDiagnosticListener</B></A></TD><TD><BR>
+<I>Prototype for diagnostic listener notification </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlogEventListener"></A>
+<A HREF=SBlogEventListener.html><B>SBlogEventListener</B></A></TD><TD><BR>
+<I>Prototype for event listener notification </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlogContentListener"></A>
+<A HREF=SBlogContentListener.html><B>SBlogContentListener</B></A></TD><TD><BR>
+<I>Prototype for content listener notification </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlog Interface"></A>
+<A HREF=SBlogInterface.html><B>SBlog Interface</B></A></TD><TD><BR>
+<I>SBlog extension interface to the VXIlog interface. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlogInit"></A>
+<A HREF=SBlogInit.html><B>SBlogInit</B></A></TD><TD><BR>
+<I> Global platform initialization of SBlog</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlogShutDown"></A>
+<A HREF=SBlogShutDown.html><B>SBlogShutDown</B></A></TD><TD><BR>
+<I> Global platform shutdown of Log</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlogCreateResource"></A>
+<A HREF=SBlogCreateResource.html><B>SBlogCreateResource</B></A></TD><TD><BR>
+<I> Create a new log service handle</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlogDestroyResource"></A>
+<A HREF=SBlogDestroyResource.html><B>SBlogDestroyResource</B></A></TD><TD><BR>
+<I> Destroy the interface and free internal resources</I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+SBlog is an implementation of the 
+<a href="VXIlogInterface.html">  VXIlog interface </a> for logging.
+The SBlogInterface extends the VXIlogInterface to support a listener
+registration mechanism for sending the logs to the final output
+stream. This mechanism allows multiple systems to tap on to a single
+log event so it can be sent both to  a file and to a central logging
+service is desired.  Listeners are invoked through callbacks.  The
+callback call is blocking.  If a listener is going to do signficant
+work or invoke functions which may block, for example a socket write,
+a messsage queue should be implemented so that callback is
+non-blocking. Failure to do this will impact overall system performance.<p>
+
+<P>Across all streams, SBlog is responsible for automatically
+supplying the following information for end consumer use:
+<ul>
+<li> timestamp </li>
+<li> (Error only) error key/values, the error number,
+and the supplied module name. </li>
+<li> (Diagnostic only) tag number, and the
+supplied subtag name </li>
+<li> (Event only) key/values pairs to log in the event </li>
+</ul>
+<p>
+
+<P>In addition, for diagnostic logging the SBlog defines a mechanism
+for enabling/disabling messages on an individual tag basis without
+requiring a recompile for use by consumers of the diagnostic
+log. Diagnostic( ) is highly efficient for cases when the tag is
+disabled: in other words, the lookup for seeing if a tag (an
+integer) is enabled should be done using a simple array or some
+other extremely low-overhead mechanism. SBlog provides a way to
+enable/disable tags on-the-fly (without needing to restart the
+software). <p>
+
+<P>Each OSB PIK component provides an XML error file which integrators
+can choose to us (or rewrite) to map error numbers and error key/values
+to error text. An XSLT transform can do this in an error viewer.
+</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

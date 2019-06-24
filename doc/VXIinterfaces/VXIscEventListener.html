@@ -1,0 +1,35 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>typedef  void <A HREF="#DOC.DOCU">VXIscEventListener</A></H2></TD><TD><H2>( struct <!1><A HREF="VXIscInterface.html">VXIscInterface</A>* pThis,<BR>&nbsp; const VXIulong eventType,<BR>&nbsp; const <!1><A HREF="VXIscEventData.html">VXIscEventData</A>* eventData,<BR>&nbsp; const VXIptr userData )</H2></TD></TR></TABLE>
+<BLOCKQUOTE> Signature for the event handler called to report Session Control events, as registered via RegisterEventListener( ).</BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Signature for the event handler called to report Session Control
+events, as registered via RegisterEventListener( ).
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>pThis</B> - 	     [IN] session control reporting the event
+<BR><B>eventType</B> -   [IN] <!1><A HREF="Event.html">Event</A> type that occurred
+<BR><B>eventData</B> -   [IN] VXIscEventDataStatus structure that reports
+the details of the event, where the structure
+and its members are only valid for the <!1><A HREF="VXIrecTransferResult.html#DOC.6.1.6.1">duration</A>
+of the event listener call.
+<BR><B>userData</B> -    [IN] User <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> for the listener, as specified
+when registering the listener.<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

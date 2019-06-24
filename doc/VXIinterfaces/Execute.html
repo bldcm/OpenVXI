@@ -1,0 +1,51 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>VXIobjResult <A HREF="#DOC.DOCU">(*Execute)</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIobjectInterface.html">VXIobjectInterface</A>* pThis,<BR>&nbsp; const VXIMap* properties,<BR>&nbsp; const VXIMap* parameters,<BR>&nbsp; VXIValue** result)</H2></TD></TR></TABLE>
+<BLOCKQUOTE> Execute an object</BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Execute an object
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>properties</B> -   [IN] Map containing properties and attributes for
+the <<!1><A HREF="object.html">object</A>> as specified above.
+<BR><B>parameters</B> -   [IN] Map containing parameters for the <<!1><A HREF="object.html">object</A>> as
+specified by the VoiceXML <param> tag. The keys
+of the map correspond to the parameter name ("name"
+attribute) while the value of each key corresponds
+to a VXIValue based type.
+For each parameter, any ECMAScript expressions are
+evaluated by the interpreter. Then if the "valuetype"
+attribute is set to "ref" the parameter value is
+packaged into a VXIMap with three properties:
+OBJECT_VALUE:       actual parameter value
+OBJECT_VALUETYPE:   "valuetype" attribute value
+OBJECT_TYPE:        "type" attribute value
+Otherwise a primitive VXIValue based type will
+be used to specify the value.
+<BR><B>result</B> -       [OUT] Return value for the <<!1><A HREF="object.html">object</A>> execution, this
+is allocated on success, the caller is responsible
+for destroying the returned value by calling 
+<!1><A HREF="VXIValueDestroy.html">VXIValueDestroy</A>( ). The <!1><A HREF="object.html">object</A>'s field variable
+will be set to this value.
+<BR><DT><B>Returns:</B><DD>  VXIobj_RESULT_SUCCESS on success,
+VXIobj_RESULT_NON_FATAL_ERROR on error, 
+VXIobj_RESULT_UNSUPPORTED for unsupported object types
+(this will cause interpreter to throw the correct event)<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

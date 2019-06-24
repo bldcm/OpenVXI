@@ -1,0 +1,33 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIbool.html">VXIbool</A> <A HREF="#DOC.DOCU">DiagnosticIsEnabled</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIlogInterface.html">VXIlogInterface</A>* pThis,<BR>&nbsp; VXIunsigned tagID)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Query whether diagnostic logging is enabled </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+NOTE: Diagnostic log messages are automatically filtered in a
+high-performance way by the <a href="Diagnostic.html">
+Diagnostic </a>  method. This should only be used in the rare
+conditions when there is significant pre-processing work 
+required to assemble the input parameters for Diagnostic( ),
+and thus it is best to suppress that performance impacting
+pre-processing as well.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>tagID</B> -         [IN] Identifier for a class of 
+<BR><DT><B>Returns:</B><DD>  TRUE if that tag is enabled (information for that tag
+will be written to the diagnostic log), FALSE if that
+tag is disabled (information for that tag will be ignored)<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

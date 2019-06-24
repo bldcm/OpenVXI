@@ -1,0 +1,30 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIcacheResult.html">VXIcacheResult</A> <A HREF="#DOC.DOCU">UnlockEx</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIcacheInterface.html">VXIcacheInterface</A>* pThis,<BR>&nbsp; const VXIbyte* key,<BR>&nbsp; VXIulong keySizeBytes)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Unlock an entry that was previously locked into the cache given a binary key NOTE: Same as Unlock( ) but supports binary keys. This is only  available as of version 1.1 of the VXIcacheInterface, use CACHE_UNLOCKEX_SUPPORTED( ) to determine availability. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+This releases a cache lock on the indicated data. Note that it
+is up to the implementation to decide when to flush the data
+from the cache, it may choose to do so immediately or may
+do so at a later time.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>key</B> -           [IN] Key name of the <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> to access, binary
+<!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> (raw bytes) of an arbitrary length
+<BR><B>keySizeBytes</B> -  [IN] Size of the key name in bytes
+<BR><DT><B>Returns:</B><DD>  VXIcache_RESULT_SUCCESS on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

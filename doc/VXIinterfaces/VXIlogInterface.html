@@ -1,0 +1,79 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>typedef struct  <A HREF="#DOC.DOCU">VXIlogInterface</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>VXIlog interface for logging </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GetVersion"></A>
+<A HREF=VXIlogInterface.html><B>GetVersion</B></A></TD><TD><BR>
+<I>Get the VXI interface version implemented </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GetImplementationName"></A>
+<A HREF=VXIlogInterface.html><B>GetImplementationName</B></A></TD><TD><BR>
+<I>Get the name of the implementation </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Error"></A>
+<A HREF=Error.html><B>Error</B></A></TD><TD><BR>
+<I>Log an error </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VError"></A>
+<A HREF=VError.html><B>VError</B></A></TD><TD><BR>
+<I>Log an error (va_list variant) </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Diagnostic"></A>
+<A HREF=Diagnostic.html><B>Diagnostic</B></A></TD><TD><BR>
+<I>Log a diagnostic message </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VDiagnostic"></A>
+<A HREF=VDiagnostic.html><B>VDiagnostic</B></A></TD><TD><BR>
+<I>Log a diagnostic message (va_list variant) </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="DiagnosticIsEnabled"></A>
+<A HREF=DiagnosticIsEnabled.html><B>DiagnosticIsEnabled</B></A></TD><TD><BR>
+<I>Query whether diagnostic logging is enabled </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Event"></A>
+<A HREF=Event.html><B>Event</B></A></TD><TD><BR>
+<I>Log an event </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VEvent"></A>
+<A HREF=VEvent.html><B>VEvent</B></A></TD><TD><BR>
+<I>Log an event (va_list variant) </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="EventVector"></A>
+<A HREF=EventVector.html><B>EventVector</B></A></TD><TD><BR>
+<I>Log an event (VXIVector variant) NOTE: This is only available as of version 1.1 of the VXIlogInterface, use LOG_EVENT_VECTOR_SUPPORTED( ) to determine availability. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="ContentOpen"></A>
+<A HREF=ContentOpen.html><B>ContentOpen</B></A></TD><TD><BR>
+<I>Open a handle to log (potentially large or binary) content NOTE: This is only available as of version 1.1 of the VXIlogInterface, use LOG_CONTENT_METHODS_SUPPORTED( ) to determine availability. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="ContentClose"></A>
+<A HREF=ContentClose.html><B>ContentClose</B></A></TD><TD><BR>
+<I>Close a stream for logging (potentially large or binary) content NOTE: This is only available as of version 1.1 of the VXIlogInterface, use LOG_CONTENT_METHODS_SUPPORTED( ) to determine availability. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="ContentWrite"></A>
+<A HREF=ContentWrite.html><B>ContentWrite</B></A></TD><TD><BR>
+<I>Write (potentially large or binary) content to a logging stream NOTE: This is only available as of version 1.1 of the VXIlogInterface, use LOG_CONTENT_METHODS_SUPPORTED( ) to determine availability. </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>The VXIlogInterface provides a set of functions which are used for
+logging by all the OpenVXI browser components.
+</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

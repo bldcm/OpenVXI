@@ -1,0 +1,30 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIscResult.html">VXIscResult</A> <A HREF="#DOC.DOCU">GetDTMF</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIscInterface.html">VXIscInterface</A>* pThis,<BR>&nbsp; VXIbyte* dtmfDigit)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Read a single DTMF digit from the DTMF queue </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Warnings: There is only one DTMF queue and it is only 
+accessible via this routine and FlushDTMFQueue( ).
+In systems with multiple clients, they must negotiate
+among themselves for access to the queue.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>dtmfDigit</B> -   [OUT] Returns the DTMF digit, returned as an
+ASCII character (0 - 9, *, #, A - D)
+<BR><DT><B>Returns:</B><DD>  VXIsc_RESULT_SUCCESS on success
+<BR>  VXIsc_RESULT_NON_FATAL_ERROR no DTMF digit available<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

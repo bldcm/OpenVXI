@@ -1,0 +1,45 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>#define <A HREF="#DOC.DOCU">INET_OPEN_IF_MODIFIED</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Conditional open, used for cases where a cache outside of VXIinet is being maintained and the desired object is already present in that cache, but the user needs to verify whether that cached object is valid for reuse or not.</BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Conditional open, used for cases where a cache outside of
+VXIinet is being maintained and the desired object is already
+present in that cache, but the user needs to verify whether
+that cached object is valid for reuse or not. (For example,
+maintaining a compiled grammar cache where the grammar source
+is obtained from a URL.) To do so, when writing data to the
+cache the user must also store the value of the
+INET_INFO_VALIDATOR return property. Then for the next request
+for that data, the user must set this property to that validator
+object and do an Open( ). If VXIinet_RESULT_NOT_MODIFIED is
+returned, the user may re-use the cached data, but must also
+update the associated validator with the updated validator
+returned in INET_INFO_VALIDATOR. Otherwise if
+VXIinet_RESULT_SUCCESS is returned, the cached entry is invalid
+and the user obtains a stream from which they must re-create
+(re-compile) the data.  (A simple case to understand is file://
+access: the validator will usually just be the modification time,
+if that changes the cached data is invalid. The need for an opaque
+validator and this conditional open mechanism is driven by HTTP 1.1,
+where the validator is far more complex, a combination of expiration
+times, a modification date, entity tags, and other data.)  Value is
+a VXIContent as returned for INET_INFO_VALIDATOR </BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

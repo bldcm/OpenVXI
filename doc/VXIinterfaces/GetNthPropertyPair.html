@@ -1,0 +1,56 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIscResult.html">VXIscResult</A> <A HREF="#DOC.DOCU">GetNthPropertyPair</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIscInterface.html">VXIscInterface</A>* pThis,<BR>&nbsp; const VXIunsigned index,<BR>&nbsp; VXIunsigned* nameBuffSizeChars,<BR>&nbsp; VXIchar* propertyName,<BR>&nbsp; VXIunsigned* valueBuffSizeChars,<BR>&nbsp; VXIchar* value)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Get the Nth property pair </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Used to iterate through the Session Control properties,
+retrieving each key/value pair. This is most commonly used to
+retrieve all the properties in order to expose them for
+application use, allowing the Session Control implementation to
+expose implementation specific properties to the application
+without requiring voice processing platform changes.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>index</B> -                [IN] Property index to retrieve, where
+the first property is index 0.
+<BR><B>propertyName</B> - 	[IN] Name of the property to retrieve
+<BR><B>nameBuffSizeChars</B> - 	[MODIFY] As input, the size of the
+name buffer, in characters. This 
+is then modified to return the actual
+name size, in bytes. When the name 
+buffer is too small, this modified 
+name can be used to allocate a larger
+buffer and re-try.
+<BR><B>name</B> - 		[OUT] Name for the property
+<BR><B>valueBuffSizeChars</B> - 	[MODIFY] As input, the size of the
+value buffer, in characters. This 
+is then modified to return the actual
+value size, in bytes. When the value 
+buffer is too small, this modified 
+value can be used to allocate a larger
+buffer and re-try.
+<BR><B>value</B> - 		[OUT] Value for the property
+<BR><DT><B>Returns:</B><DD>  VXIsc_RESULT_SUCCESS on success
+<BR>  VXIsc_RESULT_INVALID_PROPERTY when index is past the
+number of available properties
+<BR>  VXIsc_RESULT_FAILURE when the property has a non-VXIchar
+based value (can only occur for implementation defined
+properties, all standard properties are VXIchar based)
+<BR>  VXIsc_RESULT_BUFFER_TOO_SMALL when the name or value buffer
+is too small, look at the modified [...]BuffSizeChars
+values for the required sizes.<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

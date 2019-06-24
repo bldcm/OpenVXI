@@ -1,0 +1,64 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIpromptResult.html">VXIpromptResult</A> <A HREF="#DOC.DOCU">PlayFiller</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIpromptInterface.html">VXIpromptInterface</A>* pThis,<BR>&nbsp; const VXIchar* type,<BR>&nbsp; const VXIchar* src,<BR>&nbsp; const VXIchar* text,<BR>&nbsp; const VXIMap* properties,<BR>&nbsp; VXIlong minPlayMsec)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Queues and possibly starts the special play of a filler segment,  non-blocking </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+This plays a standard segment in a special manner in order to
+satisfy "filler" needs. A typical example is the VoiceXML
+fetchaudio attribute, used to specify filler audio that gets
+played while a document fetch is being performed and then
+interrupted once the fetch completes.
+
+<P>The filler segment is played to the caller once all active Play()
+operations, if any, have completed. If Play(), Wait(), or
+PlayFiller() is called before the filler segment starts playing
+it is cancelled and never played. If one of those functions is
+instead called after the filler segment starts playing, the
+filler segment is stopped once the minimum playback duration
+expires.
+
+<P>NOTE: this does not trigger the play of segments that have been queued
+but not yet played via Play().
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>type</B> -         [IN] Type of segment, either a MIME <!1><A HREF="VXIapPlayListNode.html#DOC.8.1.3.3">content</A> type,
+a sayas class name, or NULL to automatically detect
+a MIME <!1><A HREF="VXIapPlayListNode.html#DOC.8.1.3.3">content</A> type (only valid when src is
+non-NULL). The supported MIME <!1><A HREF="VXIapPlayListNode.html#DOC.8.1.3.3">content</A> types and
+sayas class names are implementation dependant.
+<BR><B>src</B> -          [IN] URI or platform dependant path to the <!1><A HREF="VXIapPlayListNode.html#DOC.8.1.3.3">content</A>;
+NULL when specifying in-memory text.
+<BR><B>text</B> -         [IN] Text (possibly with markup) to play via TTS
+or sayas classes, pass NULL when src is non-NULL.
+The format of text for TTS playback may be W3C
+SSML (type set to VXI_MIME_SSML) or simple wchar_t
+text (type set to VXI_MIME_UNICODE_TEXT).  The
+implementation may also support other formats.
+<BR><B>properties</B> -   [IN] Properties to control the fetch, queue, and
+play, as specified above. May be NULL.
+<BR><B>minPlayMsec</B> -  [IN] Minimum playback <!1><A HREF="VXIrecTransferResult.html#DOC.6.1.6.1">duration</A> for the
+filler <!1><A HREF="prompt.html">prompt</A> once it starts playing, in
+milliseconds. This is used to "lock in" a play
+so that no less then this amount of audio is
+heard by the caller once it starts playing,
+avoiding confusion from audio that is played
+for an extremely brief <!1><A HREF="VXIrecTransferResult.html#DOC.6.1.6.1">duration</A> and then cut
+off. Note that the filler <!1><A HREF="prompt.html">prompt</A> may never
+be played at all, however, if cancelled before
+it ever starts playing as described above.
+<BR><DT><B>Returns:</B><DD>  VXIprompt_RESULT_SUCCESS on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

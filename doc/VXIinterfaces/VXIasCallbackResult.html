@@ -1,0 +1,57 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>typedef enum  <A HREF="#DOC.DOCU">VXIasCallbackResult</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE> Result codes for event listener callbacks</BLOCKQUOTE>
+
+<HR>
+<P><DL>
+ <DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.8.2.3.1">VXIasCb_RESULT_SUCCESS</A></B>
+<DD><I>Event listener callback was successful </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.8.2.3.2">VXIasCb_RESULT_PAUSE_AUDIO</A></B>
+<DD><I>Event listener callback requests pausing the delivery of additional audio until TriggerResume( ) is called, as the consumer is not ready for additional audio.</I>
+</DL></P>
+
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Result codes for event listener callbacks</BLOCKQUOTE>
+<DL>
+
+<A NAME="VXIasCb_RESULT_SUCCESS"></A>
+<A NAME="DOC.8.2.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> VXIasCb_RESULT_SUCCESS</B></TT>
+<DD>Event listener callback was successful 
+<DL><DT><DD></DL><P>
+<A NAME="VXIasCb_RESULT_PAUSE_AUDIO"></A>
+<A NAME="DOC.8.2.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> VXIasCb_RESULT_PAUSE_AUDIO</B></TT>
+<DD>Event listener callback requests pausing the delivery of
+additional audio until TriggerResume( ) is called, as the
+consumer is not ready for additional audio. The Audio Source may
+opt to ignore this (it should log an error to the operator
+console if doing so), or may support this by buffering the
+audio, AS_EVENT_ERROR, and AS_EVENT_STOPPED events in the
+meanwhile, delivering an AS_EVENT_OVERFLOW event if the Audio
+Source audio buffer overflows, and delivering all the buffered
+audio and events in the normal order if TriggerResume( ) is
+called. 
+<DL><DT><DD></DL><P></DL>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,38 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>#define <A HREF="#DOC.DOCU">INET_INFO_HTTP_STATUS</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>HTTP status code, always returned for successful HTTP Open( ) operations, or HTTP Open( ) operations that fail due to the remote web server returning a HTTP failure code in the HTTP response.</BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>HTTP status code, always returned for successful HTTP Open( )
+operations, or HTTP Open( ) operations that fail due to the remote
+web server returning a HTTP failure code in the HTTP response.
+Never returned in other cases (such as for failures for file://
+fetches, or failures for HTTP fetches due to non-HTTP response
+failures such as TCP/IP connection failures).  HTTP status code
+from the last HTTP response received related to the Open( )
+request.  Returned as a VXIInteger.  For example, a successful
+Open( ) for a http:// URL will most commonly report a HTTP status
+200 (OK), while a failed attempt will often report a HTTP status
+404 (Not Found).  Note that interim response codes, such as HTTP
+status 301 (Redirect -- Moved Permanently) should not be returned
+as the VXIinet implementation should respond by doing a HTTP
+request against the redirected location, resulting in a new HTTP
+status code from the new HTTP response. </BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

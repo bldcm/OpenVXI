@@ -1,0 +1,48 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIinetResult.html">VXIinetResult</A> <A HREF="#DOC.DOCU">Prefetch</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIinetInterface.html">VXIinetInterface</A>* pThis,<BR>&nbsp; const VXIchar* moduleName,<BR>&nbsp; const VXIchar* name,<BR>&nbsp; <!1><A HREF="VXIinetOpenMode.html">VXIinetOpenMode</A> mode,<BR>&nbsp; VXIint32 flags,<BR>&nbsp; const VXIMap* properties)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Prefetch information (non-blocking) </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Note that this is optional, it does not need to be called prior
+to Open( ). <p>
+
+<P>Use the INET_PREFETCH_PRIORITY property to provide a hint to
+indicate the priority of the prefetch. Note that the
+implementation may opt to ignore the prefetch request (for
+example a low priority prefetch when the cache is already full
+with frequently used information). <p>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>moduleName</B> -   [IN] Name of the software module that is
+outputting the error. See the top of VXIlog.h
+for moduleName allocation rules.
+<BR><B>name</B> -         [IN] Name of the <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> to fetch, see <!1><A HREF="Open.html">Open</A>( ) for
+a description of supported types
+<BR><B>mode</B> -         [IN] Reserved for future use, pass <!1><A HREF="VXIinetOpenMode.html#DOC.11.1.6.1">INET_MODE_READ</A>
+<BR><B>flags</B> -        [IN] Reserved for future use, pass 0
+<BR><B>properties</B> -   [IN] Properties to control the prefetch, as listed
+above. May be NULL. Of particular note are:
+<!1><A HREF="INET_PREFETCH_PRIORITY.html">INET_PREFETCH_PRIORITY</A>, hint to indicate whether
+and how soon to prefetch the <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A>
+<!1><A HREF="INET_URL_BASE.html">INET_URL_BASE</A>, base URL for resolving relative URLs
+<!1><A HREF="INET_URL_QUERY_ARGS.html">INET_URL_QUERY_ARGS</A>, map containing key/value
+pairs for HTTP queries, where the name of each
+key is the query argument name, and the value of
+each key is a VXIValue subclass that provides the
+value for that argument
+<BR><DT><B>Returns:</B><DD>  VXIinet_RESULT_SUCCESS on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

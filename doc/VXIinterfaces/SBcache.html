@@ -1,0 +1,65 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">SBcache</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>SBcache implementation of VXIcache </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBcacheInit"></A>
+<A HREF=SBcacheInit.html><B>SBcacheInit</B></A></TD><TD><BR>
+<I> Global platform initialization of SBcache</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBcacheShutDown"></A>
+<A HREF=SBcacheShutDown.html><B>SBcacheShutDown</B></A></TD><TD><BR>
+<I> Global platform shutdown of SBcache</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBcacheCreateResource"></A>
+<A HREF=SBcacheCreateResource.html><B>SBcacheCreateResource</B></A></TD><TD><BR>
+<I> Create a new cache service handle</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBcacheDestroyResource"></A>
+<A HREF=SBcacheDestroyResource.html><B>SBcacheDestroyResource</B></A></TD><TD><BR>
+<I> Destroy the interface and free internal resources.</I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+SBcache interface, and implementation of the VXIcache abstract
+interface which permits writing arbitrary data into the cache with
+a client supplied key name, then retrieving that data from the
+cache one or more times by reading against that key name. <p>
+
+<P>Normally the cache implementation can choose to discard the data
+between the write and the read when necessary (due to running out
+of cache space, etc.), but it is also possible for clients to lock
+data in the cache to support built-in grammars and other data that
+is explicitly provisioned by system administrators and thus must
+not be removed unless by explicit system administrator command. <p>
+
+<P>See VXIcache.h for additional details.
+
+<P>This implementation currently does NOT factor in
+CACHE_CREATION_COST when determining how to clean up the cache, and
+all caching is done on disk resulting in CACHE_FLAG_LOCK_MEMORY
+being treated as CACHE_FLAG_LOCK. In addition,
+CACHE_FLAG_NONBLOCKING_IO is ignored, disk I/O is done in a
+blocking manner (usually undetectable by clients since local disks
+are used). Long key names are handled using MD5 digests as described
+as a potential implementation choice in VXIcache.h.
+
+<P>There is one cache interface per thread/line.  </BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

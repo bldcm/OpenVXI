@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) 2001 SpeechWorks International -->
+<DiagnosticMessages moduleName="*SBcache">
+    <diag tag="0">SBcache: API trace </diag>
+    <diag tag="1">SBcache: Cache manager diagnostics </diag>
+    <diag tag="2">SBcache: Cache entry diagnostics </diag>
+    <diag tag="3">SBcache: Cache stream diagnostics </diag>
+    <diag tag="4">SBcache: Cache entry table mutex diagnostics </diag>
+    <diag tag="5">SBcache: Cache entry mutex diagnostics </diag>
+
+</DiagnosticMessages>

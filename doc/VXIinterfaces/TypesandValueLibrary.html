@@ -1,0 +1,57 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">Types and Value Library</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>VXIvalue library and VXItypes header </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXItypes"></A>
+<A HREF=VXItypes.html><B>VXItypes</B></A></TD><TD><BR>
+<I>VXI type definitions </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIvalue"></A>
+<A HREF=VXIvalue.html><B>VXIvalue</B></A></TD><TD><BR>
+<I>Abstract VXI type library </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+The OpenSpeech Browser defines VXI prefixed primitive types to
+ensure portability across a wide variety of operating systems. These
+types are defined in VXItypes.h, and are used throughout all the
+VXI interfaces as well as within implementations of those interfaces.
+
+<P>In addition, the OpenSpeech Browser defines a higher-level data type
+library that provides more complex functionality such as vectors,
+maps, and reference counted BLOBs (binary large objects) along with
+a variant type that allows mixing those plus strings, integers, 
+floating point numbers, and pointer values within those data
+structures.  These are used throughout all the VXI interfaces in 
+order to efficiently pass complex data such as VoiceXML property sets
+through those interfaces in order to permit value added VXI 
+components without having to modify the VXI interfaces or the 
+implementation of other components. <p>
+
+<P>The OpenSpeech Browser implements the VXIvalue library using a highly
+efficient C++ implementation which is distributed both with the 
+OpenSpeech Browser PIK as well as with the SpeechWorks OpenSpeech 
+Recognizer.  Integrators typically do not need to modify this
+library, but will almost always need to understand and interact with
+this library as it is used throughout the OpenSpeech Browser
+interfaces and the reference code. <p>
+</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

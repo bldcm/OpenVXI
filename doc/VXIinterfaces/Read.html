@@ -1,0 +1,42 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIinetResult.html">VXIinetResult</A> <A HREF="#DOC.DOCU">Read</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIinetInterface.html">VXIinetInterface</A>* pThis,<BR>&nbsp; VXIbyte* buffer,<BR>&nbsp; VXIulong buflen,<BR>&nbsp; VXIulong* nread,<BR>&nbsp; VXIinetStream* stream)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Read from a stream </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+This may or not block, as determined by the flags used when opening
+the stream. When in non-blocking mode, partial buffers may be
+returned instead of blocking, or an VXIinet_RESULT_WOULD_BLOCK error
+is returned if no data is available at all.
+
+<P>NOTE: VXIinet_RESULT_END_OF_STREAM may be returned even when
+nread is greater then 0.  Example: if there are 20 more bytes
+remaining in a stream and the client component requests 50
+bytes via Read( ), the implementation should return
+VXIinet_RESULT_END_OF_STREAM with nread = 20. If the client
+component then (incorrectly) requests 50 more bytes via Read( ),
+return VXIinet_RESULT_END_OF_STREAM again with nread = 0.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>buffer</B> -    [OUT] Buffer that will receive <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> from the stream
+<BR><B>buflen</B> -    [IN] Length of buffer, in bytes
+<BR><B>nread</B> -     [OUT] Number of bytes actual read, may be less then
+buflen if the end of the stream was found, or if
+using non-blocking I/O and there is currently no
+more <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> available to read
+<BR><B>stream</B> -    [IN] Handle to the stream to read from
+<BR><DT><B>Returns:</B><DD>  VXIinet_RESULT_SUCCESS on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

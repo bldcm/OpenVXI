@@ -1,0 +1,50 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>typedef  <!1><A HREF="VXIasCallbackResult.html">VXIasCallbackResult</A> <A HREF="#DOC.DOCU">VXIasEventListener</A></H2></TD><TD><H2>( struct VXIasInterface* pThis,<BR>&nbsp; const VXIulong eventType,<BR>&nbsp; const <!1><A HREF="VXIasEventData.html">VXIasEventData</A>* eventData,<BR>&nbsp; const VXIptr userData )</H2></TD></TR></TABLE>
+<BLOCKQUOTE> Signature for the event handler called to report Audio Source events, as registered via RegisterEventListener( ).</BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Signature for the event handler called to report Audio Source
+events, as registered via RegisterEventListener( ).
+
+<P>As a flow control mechanism, this may return
+VXIasCb_RESULT_PAUSE_AUDIO to request the Audio Source to suspend
+the delivery of audio packets, instead buffering the audio. Once
+the consumer is ready for more audio, the audio packet delivery is
+resumed by calling TriggerResume( ). However, this Audio Source
+functionality is optional, and even Audio Source implementations
+that support this may have limited buffer sizes and may thus return
+an AS_EVENT_OVERFLOW error (throwing out audio warning) if the
+stream is paused for long.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>pThis</B> - 	     [IN] Audio source reporting the event
+<BR><B>eventType</B> -   [IN] <!1><A HREF="Event.html">Event</A> type that occurred
+<BR><B>eventData</B> -   [IN] VXIasEventDataStatus structure that reports
+the details of the event, where the structure
+and its members are only valid for the <!1><A HREF="VXIrecTransferResult.html#DOC.6.1.6.1">duration</A>
+of the event listener call (audio must be deep
+copied if required for a longer time period).
+<BR><B>userData</B> -    [IN] User <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> for the listener, as specified
+when registering the listener.  
+<BR><DT><B>Returns:</B><DD>  VXIasCb_RESULT_SUCCESS on success
+<BR>  VXIasCb_RESULT_PAUSE_AUDIO to request the Audio Source to
+pause audio delivery (may get ignored, however, as that
+functionality is optional)<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

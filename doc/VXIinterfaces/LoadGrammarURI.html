@@ -1,0 +1,50 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIrecResult.html">VXIrecResult</A> <A HREF="#DOC.DOCU">LoadGrammarURI</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIrecInterface.html">VXIrecInterface</A>* pThis,<BR>&nbsp; const VXIMap* properties,<BR>&nbsp; const VXIchar* type,<BR>&nbsp; const VXIchar* uri,<BR>&nbsp; const VXIMap* uriArgs,<BR>&nbsp; VXIrecGrammar** gram)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Load a grammar from a URI, typically non-blocking. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Initiates grammar creation from a URI (Universal Resource
+Identifier).  The resulting grammar must be activated before use.
+This allows for multiple grammars to be loaded when the page is
+read.  Grammar creation may proceed either synchronously or
+asynchronously, but must be available once ActivateGrammar( )
+returns.
+
+<P>The supported grammar formats are determined by the implementor,
+but certain VoiceXML built-in types (e.g., grammar
+src=builtin:grammar/digits?length=5) must be supported.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>properties</B> -   [IN]  Set of properties as defined above
+<BR><B>type</B> -         [IN]  MIME type of the grammar, one of the
+REC_MIME_[...] defines above or an
+implementation defined grammar type
+<BR><B>uri</B> -          [IN]  URI of the grammar definition
+<BR><B>uriArgs</B> -      [IN]  Caching, timeout, base URI and other properties
+associated with URI retrieval.
+<BR><B>gram</B> -         [OUT] Handle to the new grammar 
+<BR><DT><B>Returns:</B><DD>  VXIrec_RESULT_SUCCESS on success or one of the followings:
+VXIrec_RESULT_UNSUPPORTED_FORMAT,
+VXIrec_RESULT_UNSUPPORTED_LANGUAGE,
+VXIrec_RESULT_UNSUPPORTED_BUILTIN,
+VXIrec_RESULT_NO_AUTHORIZATION i.e: restricted builtin uri,
+VXIrec_RESULT_FETCH_TIMEOUT,
+VXIrec_RESULT_FETCH_ERROR,
+VXIrec_RESULT_OUT_OF_MEMORY,
+VXIrec_RESULT_NO_RESOURCE,
+VXIrec_RESULT_FAILURE<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

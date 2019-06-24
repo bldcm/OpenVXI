@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) 2001 SpeechWorks International -->
+<DiagnosticMessages moduleName="*.vxi">
+    <diag tag="0">VXI: VoiceXML document and application warnings</diag>
+    <diag tag="1">VXI: VoiceXML log element output</diag>
+    <diag tag="2">VXI: VoiceXML element logging</diag>
+    <diag tag="3">VXI: VoiceXML grammar logging</diag>
+    <diag tag="4">VXI: VoiceXML transitions</diag>
+</DiagnosticMessages>

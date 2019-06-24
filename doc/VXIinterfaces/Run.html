@@ -1,0 +1,54 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIinterpreterResult.html">VXIinterpreterResult</A> <A HREF="#DOC.DOCU">(*Run)</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIinterpreterInterface.html">VXIinterpreterInterface</A>* pThis,<BR>&nbsp; const VXIchar* name,<BR>&nbsp; const VXIchar* sessionScript,<BR>&nbsp; VXIValue** result)</H2></TD></TR></TABLE>
+<BLOCKQUOTE> Run a VoiceXML document and optionally return the result</BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Run a VoiceXML document and optionally return the result
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>name</B> -     [IN] Name of the VoiceXML document to fetch and
+execute, may be a URL or a platform dependant path.
+See the <!1><A HREF="Open.html">Open</A>() method in VXIinet.h for details
+about supported names, however for URLs this
+must always be an absolute URL and any query arguments
+must be embedded.
+<BR><B>sessionScript</B> -  [IN] A series of ECMAScript expressions which will
+be evaluated by the VXI to populate the session scope 
+in ECMAScript.
+<BR><B>result</B> -   [OUT] (Optional, pass NULL if not desired.) Return
+value for the VoiceXML document (from <exit/>), this
+is allocated on success and when there is an
+exit value (a NULL pointer is returned otherwise),
+the caller is responsible for destroying the returned
+value by calling <!1><A HREF="VXIValueDestroy.html">VXIValueDestroy</A>().
+<BR><DT><B>Returns:</B><DD>  [From normal operation]
+VXIinterp_RESULT_SUCCESS on success
+VXIinterp_RESULT_FAILURE if normal error occured
+VXIinterp_RESULT_STOPPED if aborted by Stop
+[During initialization from defaults]
+VXIinterp_RESULT_FETCH_TIMEOUT
+VXIinterp_RESULT_FETCH_ERROR
+VXIinterp_RESULT_INVALID_DOCUMENT
+[Serious errors]
+VXIinterp_RESULT_FATAL_ERROR
+VXIinterp_RESULT_OUT_OF_MEMORY
+VXIinterp_RESULT_PLATFORM_ERROR
+VXIinterp_RESULT_INVALID_ARGUMENT<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

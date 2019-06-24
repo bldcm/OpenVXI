@@ -1,0 +1,34 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>#define <A HREF="#DOC.DOCU">INET_INFO_EXPIRES_HINT</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE> Expires hint.</BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Expires hint.  Timestamp indicating when the cache entry will expire.
+The property is returned by Open() as a VXIInteger representing an
+ANSI/ISO time_t integer, representing the number of seconds since Jan 1,
+1970). If the entry is already expired, a VXIInteger of value 0 is
+returned.  This number only indicates this is the time where the request
+has to be made again to the remote web server. This doesn't necessarily
+mean that there will be new data after this time (For example, having the
+property INET_INFO_VALIDATOR_STRONG with
+an EXPIRES_HINT of 0, means the URL has to
+be revalidated but does not imply that the data will change.</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,103 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>typedef struct  <A HREF="#DOC.DOCU">VXIasEventData</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE> Event structure for returning audio and/or detailed status information</BLOCKQUOTE>
+
+<HR>
+<P><DL>
+ <DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>VXIulong <B><A HREF="#DOC.8.2.5.1">dataSizeBytes</A></B>
+<DD><I> Size of the audio data in bytes, may be 0.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>VXIptr <B><A HREF="#DOC.8.2.5.2">data</A></B>
+<DD><I> Pointer to the audio data, NULL if dataSizeBytes is 0 or when this is related to an AS_EVENT_LOST or AS_EVENT_OVERFLOW event</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>VXIchar* <B><A HREF="#DOC.8.2.5.3">mimetype</A></B>
+<DD><I> MIME content type for the audio data, must match an audio type supported by the recognizer, and must be the same across the entire record operation.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>VXIulong <B><A HREF="#DOC.8.2.5.4">sequenceNum</A></B>
+<DD><I> When dataSizeBytes is greater then 0 (audio data is being delivered), sequence number of the data packet, where the first audio packet after TriggerRecord( ) is 1, and then each packet afterwards increments the sequence number by one.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="VXIasResult.html">VXIasResult</A> <B><A HREF="#DOC.8.2.5.5">resultCode</A></B>
+<DD><I> Result code indicating details for AS_EVENT_ERROR events, typically set to VXIas_RESULT_SUCCESS for other events</I>
+</DL></P>
+
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Event structure for returning audio and/or detailed status information
+
+<P>All Audio Source events return an event data structure for
+providing audio from the record operation and/or detailed status
+information.  This structure, along with all the data it points at,
+is only valid for the duration of the event listener invocation.</BLOCKQUOTE>
+<DL>
+
+<A NAME="dataSizeBytes"></A>
+<A NAME="DOC.8.2.5.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VXIulong dataSizeBytes</B></TT>
+<DD>
+Size of the audio data in bytes, may be 0. For AS_EVENT_LOST and
+AS_EVENT_OVERFLOW events, this is the amount of audio data lost.
+<DL><DT><DD></DL><P>
+<A NAME="data"></A>
+<A NAME="DOC.8.2.5.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VXIptr data</B></TT>
+<DD>
+Pointer to the audio data, NULL if dataSizeBytes is 0 or when
+this is related to an AS_EVENT_LOST or AS_EVENT_OVERFLOW event
+<DL><DT><DD></DL><P>
+<A NAME="mimetype"></A>
+<A NAME="DOC.8.2.5.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VXIchar* mimetype</B></TT>
+<DD>
+MIME content type for the audio data, must match an audio type
+supported by the recognizer, and must be the same across the
+entire record operation. Typical choices are "audio/basic"
+(VXI_MIME_ULAW, Raw (headerless) 8kHz 8-bit mono u-law [PCM]
+single channel audio [G.711]) and "audio/x-alaw-basic
+(VXI_MIME_ALAW, Raw (headerless) 8kHz 8-bit mono A-law [PCM]
+single channel audio [G.711]). When reporting AS_EVENT_LOST or
+AS_EVENT_OVERFLOW events, the MIME content type must still
+indicate the audio type used for the actual stream so the
+dataSizeBytes value can be properly interpreted.
+<DL><DT><DD></DL><P>
+<A NAME="sequenceNum"></A>
+<A NAME="DOC.8.2.5.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VXIulong sequenceNum</B></TT>
+<DD>
+When dataSizeBytes is greater then 0 (audio data is being
+delivered), sequence number of the data packet, where the first
+audio packet after TriggerRecord( ) is 1, and then each packet
+afterwards increments the sequence number by one. (A TriggerStop( )
+operation followed by a TriggerRecord( ) thus resets the
+sequence number to 1.) If data packets are discarded due to
+buffer overflows (when an AS_EVENT_OVERFLOW is delivered), or if
+data packets were lost (when an AS_EVENT_LOST is delivered), the
+sequence number should also be incremented by one for each packet
+discarded or lost.
+<DL><DT><DD></DL><P>
+<A NAME="resultCode"></A>
+<A NAME="DOC.8.2.5.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="VXIasResult.html">VXIasResult</A> resultCode</B></TT>
+<DD>
+Result code indicating details for AS_EVENT_ERROR events,
+typically set to VXIas_RESULT_SUCCESS for other events
+<DL><DT><DD></DL><P></DL>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

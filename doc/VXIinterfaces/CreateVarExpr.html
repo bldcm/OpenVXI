@@ -1,0 +1,38 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIjsiResult.html">VXIjsiResult</A> <A HREF="#DOC.DOCU">(*CreateVarExpr)</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIjsiInterface.html">VXIjsiInterface</A>* pThis,<BR>&nbsp; VXIjsiContext* context,<BR>&nbsp; const VXIchar* name,<BR>&nbsp; const VXIchar* expr)</H2></TD></TR></TABLE>
+<BLOCKQUOTE> Create a script variable relative to the current scope, initialized to an expression</BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Create a script variable relative to the current scope, initialized
+to an expression
+
+<P>NOTE: When there is an expression, the expression is evaluated,
+then the value of the evaluated expression (the final
+sub-expression) assigned. Thus an expression of "1; 2;" actually
+assigns 2 to the variable.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>context</B> -   [IN] ECMAScript context to create the variable within
+<BR><B>name</B> -      [IN] Name of the variable to create
+<BR><B>expr</B> -      [IN] Expression to set the initial value of the variable
+(if NULL or empty the variable is set to ECMAScript
+Undefined as required for VoiceXML 1.0 <var>)
+<BR><DT><B>Returns:</B><DD>  VXIjsi_RESULT_SUCCESS on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

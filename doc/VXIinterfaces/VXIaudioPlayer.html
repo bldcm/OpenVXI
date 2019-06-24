@@ -1,0 +1,151 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">VXIaudioPlayer</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Audio Player Interface </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="AP_BEGIN_END_SESSION_SUPPORTED"></A>
+<A HREF=VXIaudioPlayer.html><B>AP_BEGIN_END_SESSION_SUPPORTED</B></A></TD><TD><BR>
+<I>Macros to determine the availability of new methods</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIapResult"></A>
+<A HREF=VXIapResult.html><B>VXIapResult</B></A></TD><TD><BR>
+<I> Result codes for interface methods</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIapPlayListNode"></A>
+<A HREF=VXIapPlayListNode.html><B>VXIapPlayListNode</B></A></TD><TD><BR>
+<I> Definition of a play list node, used to deliver a linked list of audio for playback</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="AP_EVENT_STARTING"></A>
+<A HREF=AP_EVENT_STARTING.html><B>AP_EVENT_STARTING</B></A></TD><TD><BR>
+<I> Events returned from the Audio Player as detailed in the Audio Player interface description</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIapEventDataStatus"></A>
+<A HREF=VXIapEventDataStatus.html><B>VXIapEventDataStatus</B></A></TD><TD><BR>
+<I> Event structure for returning detailed status information</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIapEventListener"></A>
+<A HREF=VXIapEventListener.html><B>VXIapEventListener</B></A></TD><TD><BR>
+<I> Signature for the event handler called to report Audio Player events, as registered via RegisterEventListener( ).</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIapInterface"></A>
+<A HREF=VXIapInterface.html><B>VXIapInterface</B></A></TD><TD><BR>
+<I>Audio Player interface for audio playback </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Abstract interface for playing audio to the caller via a telephony
+interface, where the audio may be on-disk audio files, in-memory
+audio, or in-memory streaming audio. <p>
+
+<P>The Audio Player interface must be implemented for each new
+underlying telephony interface, where this is frequently done by a
+third party integrator.
+
+<P>There is one Audio Player interface per telephony channel.
+
+<P>The following table summarizes the audio MIME content types that
+all Audio Player implementations should support (they typically
+support other MIME content types as well). The table after that
+summarizes the events delivered by Audio Player implementations.
+
+<P><table border=0>
+<tr><td valign=top><b> audio/basic (VXI_MIME_ULAW) </b></td>
+
+<P><td> Raw (headerless) 8kHz 8-bit mono u-law [PCM] single channel
+audio (G.711) </td></tr>
+
+<P><tr><td valign=top><b> audio/x-alaw-basic (VXI_MIME_ALAW) </b></td>
+
+<P><td> Raw (headerless) 8kHz 8-bit G.711 mono A-law [PCM] single
+channel audio (G.711) </td></tr>
+
+<P><tr><td valign=top><b> audio/x-wav (VXI_MIME_WAV) </b></td>
+
+<P><td> WAV (RIFF header) 8kHz 8-bit mono u-law or A-law [PCM]
+single channel audio </td></tr>
+</table>
+
+<P><table border=0>
+<tr><td valign=top><b> AP_EVENT_STARTING </b></td>
+
+<P><td> Reports the Audio Player moved from the IDLE state to
+the PLAYING or STREAMING state. Delivered only for the first play
+node in a play or streaming play operation. </td></tr>
+
+<P><tr><td valign=top><b> AP_EVENT_ERROR </b></td>
+
+<P><td> Reports the Audio Player encountered an error in playing
+a play node in the play list or a underlying telephony or I/O
+error. The error must have occurred after a call to
+VXIapTriggerPlay( ) or VXIapTriggerStreamingPlay( ) returned with a
+VXIap_RESULT_SUCCESS result code, never during one of those calls
+or after one of those calls return with an error.  The Audio Player
+must be returned to an IDLE state (the play operation halted) prior
+to delivering this event as the user may immediately trigger
+additional play operations from within the event listener.
+
+<P>The event includes a result code that indicates the cause of the
+error and the playlist node that caused the error (when
+available). </td></tr>
+
+<P><tr><td valign=top><b> AP_EVENT_WARNING </b></td>
+
+<P><td> Reports the Audio Player encountered a non-fatal error in
+playing a play node in the play list or a underlying telephony or
+I/O error that is recoverable.  The error must have occurred after
+a call to VXIapTriggerPlay( ) or VXIapTriggerStreamingPlay( )
+returned, never during one of those calls or after one of those
+calls return with an error.  The warning has no implications on the
+current state, if the result of the warning is that the play
+operation completed an AP_EVENT_COMPLETED event must be delivered
+after this event (or an AP_EVENT_ERROR delivered instead).
+
+<P>The event includes a result code that indicates the cause of the
+error and the playlist node that caused the error (when
+available). </td></tr>
+
+<P><tr><td valign=top><b> AP_EVENT_COMPLETED </b></td>
+
+<P><td> Reports that a play operation has terminated normally, either
+due to the output operation successfully completing or the play
+operation being stopped via TriggerStop( ). Audio Player
+implementations may also choose to automatically stop the play
+operation and return this event on hang-up, although this should
+only be done when this is automatic functionality within the
+underlying telephony library (the client is responsible for rapdily
+calling TriggerStop( ) when barge-in or hang-up occurs, which in
+most cases simplifies the Audio Player implementation by avoiding
+session control and audio source interactions).
+
+<P>The Audio Player must move from the PLAYING or STREAMING state
+to an IDLE state prior to delivering this event. </td></tr>
+
+<P><tr><td valign=top><b> AP_EVENT_RESUME_STREAM </b></td>
+
+<P><td> Reports the Audio Player is ready to resume a streaming audio
+source that is currently paused, thus obtaining additional audio
+for the current streaming audio operation. The source was paused
+when an overflow occured while delivering audio for the streaming
+play operation (TriggerStreamingPlay( ) returned
+VXIap_RESULT_STREAM_OVERFLOW).  </td></tr>
+</table></BLOCKQUOTE>
+<DL><DT><DT><B>Version:</B><DD>1.0
+
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

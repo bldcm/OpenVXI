@@ -1,0 +1,65 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>typedef struct  <A HREF="#DOC.DOCU">VXIrecRecordResult</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE> Record results structure as returned by Record( )</BLOCKQUOTE>
+
+<HR>
+<P><DL>
+ <DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>VXIContent* <B><A HREF="#DOC.6.1.5.1">waveform</A></B>
+<DD><I>The bytes of the recording </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>VXIunsigned <B><A HREF="#DOC.6.1.5.2">duration</A></B>
+<DD><I>Duration of the recording in milliseconds </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>VXIbyte <B><A HREF="#DOC.6.1.5.3">termchar</A></B>
+<DD><I>DTMF character which terminated the recording, or 0 if none.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.6.1.5.4">(*Destroy)</A></B>(struct <!1><A HREF="VXIrecRecordResult.html">VXIrecRecordResult</A>** result)
+<DD><I>True if the recording was terminated because the maximum time limit was reached *</I>
+</DL></P>
+
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Record results structure as returned by Record( )</BLOCKQUOTE>
+<DL>
+
+<A NAME="waveform"></A>
+<A NAME="DOC.6.1.5.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VXIContent* waveform</B></TT>
+<DD>The bytes of the recording 
+<DL><DT><DD></DL><P>
+<A NAME="duration"></A>
+<A NAME="DOC.6.1.5.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VXIunsigned duration</B></TT>
+<DD>Duration of the recording in milliseconds 
+<DL><DT><DD></DL><P>
+<A NAME="termchar"></A>
+<A NAME="DOC.6.1.5.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>VXIbyte termchar</B></TT>
+<DD>DTMF character which terminated the recording, or 0 if none. 
+<DL><DT><DD></DL><P>
+<A NAME="(*Destroy)"></A>
+<A NAME="DOC.6.1.5.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void (*Destroy)(struct <!1><A HREF="VXIrecRecordResult.html">VXIrecRecordResult</A>** result)</B></TT>
+<DD>True if the recording was terminated because the maximum time limit was
+reached *
+<DL><DT><DD></DL><P></DL>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

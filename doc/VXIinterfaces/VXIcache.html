@@ -1,0 +1,97 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">VXIcache </A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Cache Interface  </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="CACHE_CREATION_COST"></A>
+<A HREF=CACHE_CREATION_COST.html><B>CACHE_CREATION_COST</B></A></TD><TD><BR>
+<I>Provides a hint on how much CPU/time went into creating the object being written cache.   </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="CACHE_CREATION_COST_DEFAULT"></A>
+<A HREF=CACHE_CREATION_COST_DEFAULT.html><B>CACHE_CREATION_COST_DEFAULT</B></A></TD><TD><BR>
+<I>Default cache creation cost </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIcacheOpenMode"></A>
+<A HREF=VXIcacheOpenMode.html><B>VXIcacheOpenMode</B></A></TD><TD><BR>
+<I>Mode values for VXIcache::Open( ) </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Cache Flags"></A>
+<A HREF=CacheFlags.html><B>Cache Flags</B></A></TD><TD><BR>
+<I>Set of flags which control the caching behavior of the data put into the cache. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Cache Open Properties"></A>
+<A HREF=CacheOpenProperties.html><B>Cache Open Properties</B></A></TD><TD><BR>
+<I>Set of properties that are returned on the Open() of an existing cache entry. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="CACHE_OPENEX_SUPPORTED"></A>
+<A HREF=VXIcache.html><B>CACHE_OPENEX_SUPPORTED</B></A></TD><TD><BR>
+<I>Macros to determine the availability of new methods</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIcacheResult"></A>
+<A HREF=VXIcacheResult.html><B>VXIcacheResult</B></A></TD><TD><BR>
+<I>VXIcache return codes </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIcacheInterface"></A>
+<A HREF=VXIcacheInterface.html><B>VXIcacheInterface</B></A></TD><TD><BR>
+<I>VXIcache interface for write back caching </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Abstract interface for accessing caching functionality, which
+permits writing arbitrary data into the cache with a client
+supplied key name, then retrieving that data from the cache one or
+more times by reading against that key name. <p>
+
+<P>Normally the cache implementation can choose to discard the data
+between the write and the read when necessary (due to running out
+of cache space, etc.), but it is also possible for clients to lock
+data in the cache to support built-in grammars and other data that
+is explicitly provisioned by system administrators and thus must
+not be removed unless by explicit system administrator command. <p>
+
+<P>The interface is a synchronous interface based on the ANSI/ISO C
+standard file I/O interface. The client of the interface may use this in
+an asynchronous manner by using non-blocking I/O operations,
+creating threads, or by invoking this from a separate server
+process. <p>
+
+<P>Typically the key name specified by clients will be the URL to the
+source form of the data that is being written back, such as the URL
+to the grammar text being used as the key name for the compiled
+grammar. In the case where the VXIinet and VXIcache implementations
+share the same underlying cache storage, it is thus necessary to
+use prefixes or some other namespace mechanism to avoid collisions
+with the cache entry for the original URL. <p>
+
+<P>However, the key names specified by clients may be very large in
+some cases. This is most common when writing back data generated
+from in-memory source text, such as when writing back the compiled
+grammar for a VoiceXML document in-line grammar.  One possible
+VXIcache implementation approach is to use the MD5 algorithm as
+used in HTTP message headers (specified in RFC 1321 with a full
+implementation provided) to convert long key names to a 16 byte MD5
+value for indexing purposes, using Base64 encoding to convert the
+binary MD5 value to ASCII text if desired (as done in HTTP message
+headers). <p>
+
+<P>There is one cache interface per thread/line. <p> </BLOCKQUOTE>
+<DL><DT><DT><B>Version:</B><DD>1.0 <br>
+
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,37 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIasResult.html">VXIasResult</A> <A HREF="#DOC.DOCU">TriggerResume   </A></H2></TD><TD><H2>(struct VXIasInterface* pThis)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Resumes the delivery of audio input data </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+If an event listener returns an VXIasCb_RESULT_PAUSE_AUDIO return
+code, the Audio Source is requested to pause audio delivery. This
+call resumes audio delivery, where the buffered audio will be
+rapidly delivered until either it "catches up" with the real time
+audio input feed, or until an event listener pauses delivery
+again. (If the Audio Source audio buffer overflows, an
+AS_EVENT_OVERFLOW event is delivered.)
+
+<P>However, responding to VXIasCb_RESULT_PAUSE_AUDIO is optional.
+If the audio source cannot support that functionality, all calls
+to this should return VXIas_RESULT_UNSUPPORTED for symmetry.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Returns:</B><DD>  VXIas_RESULT_SUCCESS on success
+<BR>  VXIas_RESULT_NON_FATAL_ERROR if no record is in progress
+<BR>  VXIas_RESULT_UNSUPPORTED if pause/resume is not supported
+<BR>  Another VXIas_RESULT_[...] code for severe errors <BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

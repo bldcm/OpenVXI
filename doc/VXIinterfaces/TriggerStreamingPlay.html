@@ -1,0 +1,93 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIapResult.html">VXIapResult</A> <A HREF="#DOC.DOCU">TriggerStreamingPlay</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIapInterface.html">VXIapInterface</A>* pThis,<BR>&nbsp; <!1><A HREF="VXIapPlayListNode.html">VXIapPlayListNode</A>* playNode,<BR>&nbsp; const <!1><A HREF="VXIbool.html">VXIbool</A> lastPlayInStream)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Triggers playing an audio stream to the caller, non-blocking </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+This routine is asynchronous, in that it does not block - it only
+triggers the begin of a play operation. This interface only
+supports one play operation at a time, however for streaming
+playback this function will be called multiple times by the
+client in order to provide the streaming audio as it becomes
+available from the streaming source. If another play operation is
+initiated via TriggerPlay( ) before this operation completes, a
+VXIap_RESULT_BUSY error is returned.
+<p>
+The first call to TriggerStreamingPlay( ) (while the Audio Player
+is in an IDLE state) initiates a streaming play operation. For
+streaming plays, every play node will always contain in-memory
+audio, never a pointer to a file. The MIME content type and number
+of bytes of audio within each play node will not vary within a
+single streaming play operation.
+<p>
+The client merely delivers streaming audio as fast as possible,
+making no attempt to recover from network delays (jitter) during
+play operations, so the Audio Player should pre-buffer an
+implementation defined quantity of audio before actually starting
+playback to avoid underruns. The AP_EVENT_STARTING event must
+only be delivered once the actual audio starts getting heard by
+the caller (playback actually starts). If an underflow does
+occur, the Audio Player must deliver an AP_EVENT_WARNING event
+with a VXIap_RESULT_STREAM_UNDERFLOW status code to notify the
+client, then re-build the pre-buffer before resuming playback
+again.
+<p>
+For flow control, the Audio Player should maintain high and low
+watermark thresholds. Whenever the amount of buffered audio is
+less then the implementation defined high watermark, accept audio
+from TriggerStreamingPlay( ) calls. When that is exceeded,
+however return a VXIap_RESULT_STREAM_OVERFLOW error to instruct
+the client to suppress additional audio until the Audio Player
+delivers an AP_EVENT_RESUME_STREAM event. The Audio Player should
+only do so when the amount of buffered audio falls below the low
+watermark. This mechanism, where there is some distance between
+the low and high watermarks, ensures the flow control is done
+efficiently by minimizing the amount of times the audio stream is
+paused and resumed, as those operations are relatively expensive.
+<p>
+When this function returns successfully, ownership of the play
+node is passed to the Audio Player, which may then modify the
+previous and next pointers as desired to support the
+immplementation. The Audio Player is then responsible for calling
+the Destroy( ) method of each play node as each node is no longer
+needed. If this function returns an error, however, this function
+must not have made any changes to the play node (particularly the
+previous and next pointers), and ownership is returned to the
+client.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>playList</B> -           [IN] <!1><A HREF="Play.html">Play</A> node to play to the caller,
+on success ownership is passed
+<BR><B>lastPlayInStream</B> -   [IN] TRUE to indicate this is the last
+play node in the stream, <!1><A HREF="FALSE.html">FALSE</A> to indicate
+additional play nodes will follow
+<BR><DT><B>Returns:</B><DD>  VXIap_RESULT_SUCCESS on success
+<BR>  VXIap_RESULT_BUSY if a non-streaming play is already in
+progress
+<BR>  VXIap_RESULT_SUCCESS on success
+<BR>  VXIap_INVALID_ARGUMENT if a file path is supplied for
+any of the play nodes, all content must be passed in-memory
+<BR>  VXIap_RESULT_NON_FATAL_ERROR if the MIME content
+type is not supported or if the MIME type does not match
+the MIME type of the current stream.
+<BR>  VXIap_RESULT_STREAM_OVERFLOW if the VXIapInterface is
+temporarily unable accept any more playnodes. When it is
+ready for more plays the VXIapInterface will issue an
+AP_EVENT_RESUME_STREAM event and the application can continue
+to calling TriggerStreamingPlay starting with the playnode
+that first resulted in the VXIap_RESULT_STREAM_OVERFLOW.
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

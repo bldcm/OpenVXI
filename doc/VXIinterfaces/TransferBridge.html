@@ -1,0 +1,44 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXItelResult.html">VXItelResult</A> <A HREF="#DOC.DOCU">TransferBridge</A></H2></TD><TD><H2>(struct <!1><A HREF="VXItelInterface.html">VXItelInterface</A>*  pThis,<BR>&nbsp; const VXIMap* properties,<BR>&nbsp; const VXIchar* transferDestination,<BR>&nbsp; VXIMap** resp)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Performs a bridge transfer. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Perform a bridge transfer into the network.  The implementation
+is generally going to be platform dependant and will require a lot
+of configuration per installation location.
+
+<P>NOTE: This is called only if VXIrecInterface::HotwordTransfer returns
+VXItel_RESULT_UNSUPPORTED.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>pThis</B> -  [in] the line on which the transfer is to be performed.
+<BR><B>properties</B> -  [in] termination character, length, timeouts...
+<BR><B>transferDestination</B> -  [in] identifier of transfer location (e.g. a
+phone number to dial or a SIP URL).
+<BR><B></B> - <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> [in] the <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> to be sent to the transfer target.
+<BR><B>resp</B> -  [out] Key/value containing the result.  Basic keys:
+TEL_TRANSFER_DURATION - length of the call in ms
+TEL_TRANSFER_STATUS - see <!1><A HREF="VXItelTransferStatus.html">VXItelTransferStatus</A>
+<BR><DT><B>Returns:</B><DD>  VXItel_SUCCESS if operation succeeds,
+VXItel_RESULT_CONNECTION_NO_AUTHORIZATION,
+VXItel_RESULT_CONNECTION_BAD_DESTINATION,
+VXItel_RESULT_CONNECTION_NO_ROUTE,
+VXItel_RESULT_CONNECTION_NO_RESOURCE,
+VXItel_RESULT_UNSUPPORTED,
+VXItel_RESULT_OUT_OF_MEMORY,
+VXItel_RESULT_FAILURE<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

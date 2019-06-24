@@ -1,0 +1,284 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">VXIvalue</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Abstract VXI type library </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIvalueResult"></A>
+<A HREF=VXIvalueResult.html><B>VXIvalueResult</B></A></TD><TD><BR>
+<I> Result codes for function methods</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIValueGetType"></A>
+<A HREF=VXIValueGetType.html><B>VXIValueGetType</B></A></TD><TD><BR>
+<I> Get the type of a Value</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIValueDestroy"></A>
+<A HREF=VXIValueDestroy.html><B>VXIValueDestroy</B></A></TD><TD><BR>
+<I> Generic Value destructor</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIValueClone"></A>
+<A HREF=VXIValueClone.html><B>VXIValueClone</B></A></TD><TD><BR>
+<I> Generic Value clone</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIBooleanCreate"></A>
+<A HREF=VXIBooleanCreate.html><B>VXIBooleanCreate</B></A></TD><TD><BR>
+<I> Create a Boolean from a VXIbool</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIBooleanDestroy"></A>
+<A HREF=VXIBooleanDestroy.html><B>VXIBooleanDestroy</B></A></TD><TD><BR>
+<I> Boolean destructor</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIBooleanValue"></A>
+<A HREF=VXIBooleanValue.html><B>VXIBooleanValue</B></A></TD><TD><BR>
+<I> Get the value of a Boolean</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIIntegerCreate"></A>
+<A HREF=VXIIntegerCreate.html><B>VXIIntegerCreate</B></A></TD><TD><BR>
+<I> Create an Integer from a 32 bit integer</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIIntegerDestroy"></A>
+<A HREF=VXIIntegerDestroy.html><B>VXIIntegerDestroy</B></A></TD><TD><BR>
+<I> Integer destructor</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIIntegerValue"></A>
+<A HREF=VXIIntegerValue.html><B>VXIIntegerValue</B></A></TD><TD><BR>
+<I> Get the value of an Integer</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIFloatCreate"></A>
+<A HREF=VXIFloatCreate.html><B>VXIFloatCreate</B></A></TD><TD><BR>
+<I> Create a Float from a 32 bit floating point number</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIFloatDestroy"></A>
+<A HREF=VXIFloatDestroy.html><B>VXIFloatDestroy</B></A></TD><TD><BR>
+<I> Float destructor</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIFloatValue"></A>
+<A HREF=VXIFloatValue.html><B>VXIFloatValue</B></A></TD><TD><BR>
+<I> Get the value of a Float</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIPtrCreate"></A>
+<A HREF=VXIPtrCreate.html><B>VXIPtrCreate</B></A></TD><TD><BR>
+<I> Create a Ptr from a C pointer</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIPtrDestroy"></A>
+<A HREF=VXIPtrDestroy.html><B>VXIPtrDestroy</B></A></TD><TD><BR>
+<I> Ptr destructor</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIPtrValue"></A>
+<A HREF=VXIPtrValue.html><B>VXIPtrValue</B></A></TD><TD><BR>
+<I> Get the value of a Ptr</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIContentCreate"></A>
+<A HREF=VXIContentCreate.html><B>VXIContentCreate</B></A></TD><TD><BR>
+<I> Create a Content from MIME content typed data</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIContentDestroy"></A>
+<A HREF=VXIContentDestroy.html><B>VXIContentDestroy</B></A></TD><TD><BR>
+<I> Content destructor</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIContentValue"></A>
+<A HREF=VXIContentValue.html><B>VXIContentValue</B></A></TD><TD><BR>
+<I> Get the value of a Content</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIStringCreate"></A>
+<A HREF=VXIStringCreate.html><B>VXIStringCreate</B></A></TD><TD><BR>
+<I> Create a String from a null-terminated character array</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIStringCreateN"></A>
+<A HREF=VXIStringCreateN.html><B>VXIStringCreateN</B></A></TD><TD><BR>
+<I> Create a String from a known-length character array</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIStringDestroy"></A>
+<A HREF=VXIStringDestroy.html><B>VXIStringDestroy</B></A></TD><TD><BR>
+<I> String destructor</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIStringClone"></A>
+<A HREF=VXIStringClone.html><B>VXIStringClone</B></A></TD><TD><BR>
+<I> String clone</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIStringSetValue"></A>
+<A HREF=VXIStringSetValue.html><B>VXIStringSetValue</B></A></TD><TD><BR>
+<I> Set the value of a String from a null-terminated character array</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIStringValue"></A>
+<A HREF=VXIStringValue.html><B>VXIStringValue</B></A></TD><TD><BR>
+<I> Get the value of a String</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIStringCStr"></A>
+<A HREF=VXIStringCStr.html><B>VXIStringCStr</B></A></TD><TD><BR>
+<I> Get direct access to the NULL-terminated character value</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIStringLength"></A>
+<A HREF=VXIStringLength.html><B>VXIStringLength</B></A></TD><TD><BR>
+<I> Get the number of characters in a String's value</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIStringCompare"></A>
+<A HREF=VXIStringCompare.html><B>VXIStringCompare</B></A></TD><TD><BR>
+<I> Compares two Strings</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIStringCompareC"></A>
+<A HREF=VXIStringCompareC.html><B>VXIStringCompareC</B></A></TD><TD><BR>
+<I> Compares a String to a NULL-terminated character array</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIMapCreate"></A>
+<A HREF=VXIMapCreate.html><B>VXIMapCreate</B></A></TD><TD><BR>
+<I> Create an empty Map</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIMapDestroy"></A>
+<A HREF=VXIMapDestroy.html><B>VXIMapDestroy</B></A></TD><TD><BR>
+<I> Map destructor</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIMapClone"></A>
+<A HREF=VXIMapClone.html><B>VXIMapClone</B></A></TD><TD><BR>
+<I> Map clone</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIMapSetProperty"></A>
+<A HREF=VXIMapSetProperty.html><B>VXIMapSetProperty</B></A></TD><TD><BR>
+<I> Set a named property on an Map</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIMapGetProperty"></A>
+<A HREF=VXIMapGetProperty.html><B>VXIMapGetProperty</B></A></TD><TD><BR>
+<I> Get a named property from an Map</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIMapDeleteProperty"></A>
+<A HREF=VXIMapDeleteProperty.html><B>VXIMapDeleteProperty</B></A></TD><TD><BR>
+<I> Delete a named property from an Map</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIMapNumProperties"></A>
+<A HREF=VXIMapNumProperties.html><B>VXIMapNumProperties</B></A></TD><TD><BR>
+<I> Return the number of properties for an Map</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIMapGetFirstProperty"></A>
+<A HREF=VXIMapGetFirstProperty.html><B>VXIMapGetFirstProperty</B></A></TD><TD><BR>
+<I> Get the first property of an Map and an iterator</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIMapGetNextProperty"></A>
+<A HREF=VXIMapGetNextProperty.html><B>VXIMapGetNextProperty</B></A></TD><TD><BR>
+<I> Get the next property of an Map based on an iterator</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIMapIteratorDestroy"></A>
+<A HREF=VXIMapIteratorDestroy.html><B>VXIMapIteratorDestroy</B></A></TD><TD><BR>
+<I> Destroy an iterator</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIVectorCreate"></A>
+<A HREF=VXIVectorCreate.html><B>VXIVectorCreate</B></A></TD><TD><BR>
+<I> Create an empty Vector</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIVectorDestroy"></A>
+<A HREF=VXIVectorDestroy.html><B>VXIVectorDestroy</B></A></TD><TD><BR>
+<I> Vector destructor</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIVectorClone"></A>
+<A HREF=VXIVectorClone.html><B>VXIVectorClone</B></A></TD><TD><BR>
+<I> Vector clone</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIVectorAddElement"></A>
+<A HREF=VXIVectorAddElement.html><B>VXIVectorAddElement</B></A></TD><TD><BR>
+<I> Adds an element to the end of the Vector</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIVectorSetElement"></A>
+<A HREF=VXIVectorSetElement.html><B>VXIVectorSetElement</B></A></TD><TD><BR>
+<I> Set an indexed vector element</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIVectorGetElement"></A>
+<A HREF=VXIVectorGetElement.html><B>VXIVectorGetElement</B></A></TD><TD><BR>
+<I> Get an indexed vector element</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIVectorLength"></A>
+<A HREF=VXIVectorLength.html><B>VXIVectorLength</B></A></TD><TD><BR>
+<I> Return number of elements in a Vector</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIValueStringFormat"></A>
+<A HREF=VXIValueStringFormat.html><B>VXIValueStringFormat</B></A></TD><TD><BR>
+<I> Formats for the string result of VXIValueToString, currently:</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIValueToString"></A>
+<A HREF=VXIValueToString.html><B>VXIValueToString</B></A></TD><TD><BR>
+<I> Generic Value to string conversion</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIMapHolder"></A>
+<A HREF=VXIMapHolder.html><B>VXIMapHolder</B></A></TD><TD><BR>
+<I> C++ wrapper class that makes it easier to work with VXIMaps</I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Abstract run-time types for VXI interferences and optionally
+implementation. These types mirror ECMAScript types (and could be
+implemented as such). They could also be implemented using C++ and
+STL, or using C. Using these abstract types rather than directly
+using an externally defined class library increases portability,
+and allows the implementers of each interface to independantly
+select external class libraries (or none at all) for their own
+implementation.
+
+<P>Each type is implemented as a handle that is obtained from a
+constructor and supports run-time typing. The owner (creator) of
+each type is responsible for freeing it by calling the appropriate
+destructor.
+
+<P>Note: When errors occur, constructors return a NULL object. 
+Typically this is due to running out of memory, or a type
+mismatch for copy constructors.
+
+<P>The value types are as follows, note that the naming convention is
+VXI followed by the type name starting with an uppercase letter, while
+the simple VXI types in VXIvalue.h use VXI followed by the type name
+starting with a lowercase letter:
+
+<P><table border=0>
+<tr>
+<td valign=top> <b>VXIValue</b></td>
+<td valign=top> Abstract base type for all the rest, can cast any type to
+this type and still determine the original type. Used
+to provide input/return values where the actual underlying
+type can vary. </td>
+</tr>
+<tr>
+<td valign=top><b>VXIBoolean</b></td><td>   Container for a boolean (VXIbool) </td>
+</tr>
+<tr>
+<td valign=top><b>VXIInteger</b></td><td>   Container for a 32-bit integer (VXIint32) </td>
+</tr>
+<tr>
+<td valign=top><b> VXIFloat</b></td><td>     Container for a 32-bit float type (VXIflt32) </td>
+</tr>
+<tr>
+<td valign=top><b> VXIString</b></td><td>    Container for a string (VXIchar) </td>
+</tr>
+<tr>
+<td valign=top><b> VXIPtr</b></td><td>       Container for a untyped pointer (VXIptr) </td>
+</tr>
+<tr>
+<td valign=top><b> VXIContent</b></td><td>   Container for MIME content typed data (VXIptr) </td>
+</tr>
+<tr>
+<td valign=top><b>  VXIMap</b></td>
+<td>    Simple key/value container where the keys are of VXIchar 
+type and the values are any of the abstract types defined 
+here.</td>
+</tr>
+<tr>
+<td valign=top><b>  VXIVector</b></td>
+<td>    Simple indexed vector that supports appending elements 
+at the end, and getting and setting elements by index.
+There is no support for removing elements or insertions. </td>
+</tr>
+<tr>
+</table></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

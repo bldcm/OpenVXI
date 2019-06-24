@@ -1,0 +1,430 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./Architecture_files/filelist.xml">
+<link rel=Edit-Time-Data href="./Architecture_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>OpenSpeech Browser PIK Architecture</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>dmeyer</o:Author>
+  <o:LastAuthor>dmeyer</o:LastAuthor>
+  <o:Revision>12</o:Revision>
+  <o:TotalTime>68</o:TotalTime>
+  <o:Created>2001-10-08T16:06:00Z</o:Created>
+  <o:LastSaved>2001-10-08T18:52:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>1075</o:Words>
+  <o:Characters>6133</o:Characters>
+  <o:Company>SpeechWorks International, Inc.</o:Company>
+  <o:Lines>51</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>7531</o:CharactersWithSpaces>
+  <o:Version>9.4402</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>85</w:Zoom>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0in;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:98331448;
+	mso-list-type:hybrid;
+	mso-list-template-ids:81422858 -1828570684 2065606542 -1746867758 -620987866 -1590295728 1892473028 1695576554 -1533094282 331108686;}
+@list l1
+	{mso-list-id:689264246;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1563060368 -28156324 1737284958 467942772 -724671560 422620344 -1388552774 867100558 -1367440366 372046150;}
+@list l2
+	{mso-list-id:1049308641;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1638484870 730356448 -1541888116 859177060 1926779636 -890724394 1707523850 -1771374898 -1096145070 -961639350;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:1299993728;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-206165588 705065930 -1312782404 -1078658546 2065838308 589207300 560622252 -1487139094 1896637882 -244650156;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1031">
+  <o:colormru v:ext="edit" colors="#ffe4bf"/>
+  <o:colormenu v:ext="edit" fillcolor="#ffe4bf"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue style='tab-interval:
+.5in'>
+
+<div class=Section1>
+
+<h3><img width=93 height=114 id="_x0000_i1025" src="images/SPEECH_LOGO.gif"
+align=middle></img><span style="mso-spacerun: yes">&nbsp;</span>OpenSpeech Browser PIK</h3>
+
+<h1>OpenSpeech Browser PIK Architecture</h1>
+
+<p><br> The OpenSpeech Browser PIK is a portable open source based
+toolkit that interprets the VoiceXML dialog markup language. It is
+designed to serve as a platform integration kit for system integrators
+and platform vendors who want to incorporate VoiceXML into their
+platform using SpeechWorks International, Inc. products.  Although it
+is perfectly suitable for PC desktop applications, its design reflects
+VoiceXML's target of telephony platforms. </p>
+
+<h2>Introduction</h2>
+
+<p class=MsoNormal>A browser is a client application program that takes one or
+more input streams on a platform and executes an application that lives on one
+or more document servers by interpreting markup. In the case of VoiceXML, the
+application consists of the call flow logic, the prompts for the application,
+and any associated grammars (see figure below). The document server executes
+portions of the application dialog by delivering VoiceXML markup to the browser
+in response to a document request. The markup interpreter renders the VoiceXML
+markup within an interpreter context, perhaps changing the context, and then
+makes calls into the implementation platform. The implementation platform
+contains all of the resources needed by the markup interpreter to render the
+dialog. &nbsp; </p>
+
+<h2>Process Architecture</h2>
+
+<p>The figure below shows the components for a VoiceXML system. When a call is
+received it is detected by the implementation platform. The platform sends an
+event to the markup interpreter, which looks in its context for the URI of the
+initial document to fetch. The interpreter then sends a Request to the Document
+Server for the initial document. The Document Server then sends the document
+back to the Markup Interpreter which then instructs the Implementation Platform
+on the first steps to perform on behalf of the caller. The Markup Interpreter
+then interprets the result of an execution in the Implementation Platform. The
+interpretation may result in the Markup Interpreter making additional document
+requests to the Document Server. </p>
+
+<h2>System Architecture</h2>
+
+<p class=MsoNormal>The figure also shows the system architecture where
+the OpenSpeech Browser PIK is integrated onto a platform by adding
+SpeechWorks recognition and text-to-speech technology, and platform
+monitoring, administration, and telephony functionality. This
+integrated platform receives VoiceXML pages from a document
+server. The document server consists of a web server, potentially an
+application framework, and a VoiceXML application. The VoiceXML
+application can be one or more VoiceXML files, or these files can be
+dynamically generated using CGI scripts or other computations. </p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1026" type="#_x0000_t75" style='width:6in;
+ height:223.5pt'>
+ <v:imagedata src="./images/image004.gif" o:title="sysarch"/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=298
+src="./images/image004.gif" v:shapes="_x0000_i1026"><![endif]></p>
+
+<p>The speech browser platform executes the VoiceXML pages to provide the
+speech service to the caller connected over the telephone network. The
+speech browser platform logically consists of four parts: </p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list .5in'><b>Main process and
+     operations, administration, and maintenance system:</b> collection of
+     tools responsible for system management and error reporting. This critical
+     component also invokes the speech browser within a thread it creates to
+     begin execution.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list .5in'><b>OpenVXI:</b> interprets
+     the VoiceXML markup and calls into the implementation platform to render
+     the markup.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list .5in'><b>OpenSpeech Browser PIK:</b>
+     provide the high-level services necessary for the system to run,
+     including the recognition engine, prompt engine, Internet fetch
+     library, and ECMAScript engine.
+     The OpenVXI accesses these components through interfaces that must be
+     implemented in order for the system to function. These interfaces do not
+     define the mechanism for communicating between the implementation of the
+     interface and the underlying software: this could be done using
+     client/server protocols or direct communication.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list .5in'><b>Telephony and base
+     services:</b> base operating system services and telephony services needed
+     to receive phone calls. The OpenSpeech Browser PIK makes few assumptions about the
+     operating system and telephony services, as it accesses them through
+     replaceable interfaces.</li>
+</ol>
+
+<h2>OpenSpeech Browser PIK Components</h2>
+
+<h2 align=center style='text-align:center'><!--[if gte vml 1]><v:shape id="_x0000_i1027"
+ type="#_x0000_t75" style='width:419.25pt;height:221.25pt'>
+ <v:imagedata src="./images/image006.gif" o:title="components"/>
+</v:shape><![endif]--><![if !vml]><img width=559 height=295
+src="./images/image006.gif" v:shapes="_x0000_i1027"><![endif]></h2>
+
+<p>The figure above shows the OpenSpeech Browser PIK architecture and the
+component parts, including an integration with SpeechWorks products
+for speech recognition and text-to-speech. All components are designed
+to be portable across operating systems. The speech browser consists
+of: </p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo6;tab-stops:list .5in'>VXI<br>
+     <br>
+     Interprets all VoiceXML markup and acts as the main control loop.
+     The VXI implements all required portions of the VoiceXML 1.0 
+     specification and most optional features.<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo6;tab-stops:list .5in'>XML Parser Interface<br>
+     <br>
+     Provides access to a XML DOM
+     parser, currently implemented by directly calling the open source <a
+     href="http://xml.apache.org/xerces-c/index.html">Apache Xerces
+     SAX and DOM parser APIs.</a><br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo6;tab-stops:list .5in'>Internet Interface<br>
+     <br>
+     Provides access to application documents via http:// and file:// access,
+     as well as support for POSTing data back to the application server. The
+     reference implementation integrates the open source <a
+     href="http://www.w3.org/Library/">W3C Libwww library.</a><br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo6;tab-stops:list .5in'>ECMAScript (JavaScript)
+     Interface<br>
+     <br>
+     Provides access to ECMAScript execution services. The reference
+     implementation integrates the open source <a
+     href="http://www.mozilla.org/js/spidermonkey/">Mozilla SpiderMonkey
+     engine.</a><br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo6;tab-stops:list .5in'>Logging
+     Interface<br>
+     <br>
+     Used to report errors, events, and diagnostic messages to system
+      operators. The reference implementation logs to a file and
+      optionally to standard output.<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></li>
+</ol>
+
+<p class=MsoNormal><br>
+The core browser relies on a set of platform APIs. These include: </p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo11;tab-stops:list .5in'>Recognizer Interface<br>
+     <br>
+     Provides the grammar management and
+     recognition services as required by the VoiceXML specification,
+     including dynamic grammar construction and grammar enabling. It
+     obtains caller input via the telephony services. The OpenSpeech
+     Browser includes an OpenSpeech Recognizer integration.<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo11;tab-stops:list .5in'>Prompt Interface<br>
+     <br>
+Provides complete prompting services, including the
+ability to play &quot;filler&quot; audio in order to support fetch
+audio. It must handle recorded audio (specified by URI) and provide
+text-to-speech services, passing the returned audio to the telephony services
+for playback. The OpenSpeech Browser PIK includes a prompt implementation
+ based on a Speechify Text-to-Speech integration.
+     <br style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo11;tab-stops:list .5in'>Telephony Interface<br>
+     <br>
+Provides call control services, including the
+ability to transfer and disconnect calls as well as delivering telephony
+events. The OpenSpeech Browser PIK includes a telephony implementation
+that interacts with the underlying telephony abstraction APIs to
+provide call control services.
+     <br style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo11;tab-stops:list .5in'>Object Interface<br>
+     <br>
+Provides access to objects, platform defined extensions to the
+VoiceXML language that are accessed through the object
+element. Objects can easily be defined to meet platform specific
+requirements for extended call control, CTI screen pop, or other
+requirements. The OpenSpeech Browser PIK includes a reference object
+interface implementation that calls a C function for executing the
+appropriate object based on the object's name, including two simple
+reference objects: one for providing extended logging access, one
+for echoing the parameters to an object for application debugging purposes.
+     <br style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></li>
+</ol>
+
+<h2>OpenSpeech Browser PIK Interfaces</h2>
+
+<p>The <a href="VXIinterfaces\index.html">Interface Reference</a> provides full
+documentation for each interface. These comply with the following:</p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo13;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>All interfaces are ANSI/ISO C compliant with an object
+oriented design</p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo13;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>All interfaces are defined as structures containing C
+function pointers for each method </p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo13;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>All interfaces use a base type system, abstracting all
+the basic C types to enable operating system independence</p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo13;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Character data is passed using the ANSI/ISO C wchar_t
+wide character type, which is an operating system dependant type that allows
+passing wide character (generally Unicode UCS-2) based data, permitting easier
+internationalization and localization</p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo13;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Error codes are enumerated for each interface, where
+errors less than zero are fatal errors, 0 is always success, and return codes
+greater than zero are non-fatal errors</p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo13;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>To avoid issues that occur where memory is allocated by
+one DLL/shared library and destroyed by another, when data is returned
+by an interface a destructor is provided to destroy that data </p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l2 level1 lfo13;
+tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>All interface methods follow this calling convention: <br>
+VXI&lt;module name&gt;Result VXI&lt;module name&gt;&lt;function&gt; (handle, in
+variables, in/out variables, out variables)</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+
+<p>Copyright (c) 2000-2001. SpeechWorks International, Inc. All rights
+reserved. </p>
+
+<p>VoiceXML is a Trademark of the <a href="http://www.voicexml.org">VoiceXML
+forum</a>.&nbsp; <br>
+&nbsp; </p>
+
+</div>
+
+</body>
+
+</html>

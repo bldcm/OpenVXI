@@ -1,0 +1,48 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIlogResult.html">VXIlogResult</A> <A HREF="#DOC.DOCU">Event</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIlogInterface.html">VXIlogInterface</A>* pThis,<BR>&nbsp; VXIunsigned eventID,<BR>&nbsp; const VXIchar* format,<BR>&nbsp; ...)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Log an event </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Basic error reporting mechanism.  Errors are reported by
+moduleName, error number, and with a varargs format. Event
+details are not free-form, they  must be passed as a succession of 
+key-value pairs, i.e. a string key followed by a value. See the
+description of the format parameter for 
+<a=href="Error.html"> Error </a> for a full explanation.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>eventID</B> -       [IN] <!1><A HREF="Event.html">Event</A> number to <!1><A HREF="log.html">log</A>, this is mapped to a
+localized event name that is placed in the event
+log. It is critical that this provide unambiguous
+information about the nature of the event. See 
+the top of this file for eventID allocation rules.
+<BR><B>format</B> -        [IN] Format string as passed to wprintf( ) (the
+wchar_t version of printf( ) as defined by the
+ANSI C standard) for outputting optional event
+details. This is followed by a variable list of
+arguments supplying values for insertion into the 
+format string, also as passed to wprintf(). <p>
+IMPORTANT: <!1><A HREF="Event.html">Event</A> details are not free-form, they
+must be passed as a succession of key-value pairs,
+i.e. a string key followed by a value. See the
+description of the format parameter for 
+<a href="Error.html"> <!1><A HREF="Error.html">Error</A> </a> for a full 
+explanation.
+<BR><B>...</B> -           [IN] Arguments matching the event details format
+specified above.
+<BR><DT><B>Returns:</B><DD>  VXIlog_RESULT_SUCCESS on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

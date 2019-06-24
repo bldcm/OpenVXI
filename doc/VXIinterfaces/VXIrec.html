@@ -1,0 +1,69 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">VXIrec</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Recognizer Interface </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="REC_BARGEIN_TYPE"></A>
+<A HREF=REC_BARGEIN_TYPE.html><B>REC_BARGEIN_TYPE</B></A></TD><TD><BR>
+<I> Keys identifying properties in VXIMap</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIrecBargeinType"></A>
+<A HREF=VXIrecBargeinType.html><B>VXIrecBargeinType</B></A></TD><TD><BR>
+<I> Bargein types as set in the REC_BARGEIN_TYPE property defined above</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIrecInputMode"></A>
+<A HREF=VXIrecInputMode.html><B>VXIrecInputMode</B></A></TD><TD><BR>
+<I> Input modes as set in the REC_INPUT_MODE property defined above and as returned in VXIrecResult structures</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="REC_MIME_CHOICE"></A>
+<A HREF=REC_MIME_CHOICE.html><B>REC_MIME_CHOICE</B></A></TD><TD><BR>
+<I> MIME content types for LoadGrammarURI( ) and LoadGrammarString( ), the implementation usually supports additional MIME types </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIrecRecordResult"></A>
+<A HREF=VXIrecRecordResult.html><B>VXIrecRecordResult</B></A></TD><TD><BR>
+<I> Record results structure as returned by Record( )</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIrecTransferResult"></A>
+<A HREF=VXIrecTransferResult.html><B>VXIrecTransferResult</B></A></TD><TD><BR>
+<I> Record results structure as returned by Record( )</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIrecResult"></A>
+<A HREF=VXIrecResult.html><B>VXIrecResult</B></A></TD><TD><BR>
+<I> Result codes for interface methods</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIrecInterface"></A>
+<A HREF=VXIrecInterface.html><B>VXIrecInterface</B></A></TD><TD><BR>
+<I>VXIrec interface for speech recognition </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Abstract interface for recognition functionality required by
+VoiceXML. Recognition is performed against VXIrecGrammars, abstract
+grammar types managed by the interface. The exact grammar formats
+handled are implementation dependant. <p>
+
+<P>If an asynchronous problem/error occurs in the platform's
+recognizer, the VXI is notified through the VXIrecResult code for
+the current or next function call. <p>
+
+<P>There is one recognizer interface per thread/line.</BLOCKQUOTE>
+<DL><DT><DT><B>Version:</B><DD>1.0
+
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

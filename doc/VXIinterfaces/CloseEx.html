@@ -1,0 +1,33 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIcacheResult.html">VXIcacheResult</A> <A HREF="#DOC.DOCU">CloseEx</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIcacheInterface.html">VXIcacheInterface</A>* pThis,<BR>&nbsp; <!1><A HREF="VXIbool.html">VXIbool</A> keepEntry,<BR>&nbsp; VXIcacheStream** stream)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Close a previously opened stream NOTE: Same as Close( ) but supports invalidating the entry. This is only available as of version 1.1 of the VXIcacheInterface, use CACHE_CLOSEEX_SUPPORTED( ) to determine availability. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Close a previously opened stream.  If Close is called on 
+a NULL stream or a previously closed stream an error will be
+returned
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>keepEntry</B> -     [IN] TRUE to indiate the write was a success
+and the <!1><A HREF="cache.html">cache</A> entry should be retained,
+<!1><A HREF="FALSE.html">FALSE</A> to indicate the write failed
+(typically due to a <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A> source read
+unexpectedly failing)
+<BR><B>stream</B> -        [IN/OUT] Stream to close, set to NULL on
+success
+<BR><DT><B>Returns:</B><DD>  VXIcache_RESULT_SUCCESS on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

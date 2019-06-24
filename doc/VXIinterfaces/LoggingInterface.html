@@ -1,0 +1,51 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">Logging Interface</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>VXIlog interface </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIlog"></A>
+<A HREF=VXIlog.html><B>VXIlog</B></A></TD><TD><BR>
+<I>Abstract interface for logging errors, diagnostic logging, and event logging. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlog"></A>
+<A HREF=SBlog.html><B>SBlog</B></A></TD><TD><BR>
+<I>SBlog implementation of VXIlog </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBlogListeners"></A>
+<A HREF=SBlogListeners.html><B>SBlogListeners</B></A></TD><TD><BR>
+<I>Reference implementation of SBlog listeners </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+The OpenSpeech Browser logs through the VXIlog
+interface.  This interface provides a mechanism for error logging,
+event logging, and diagnostic logging. <p>
+
+<P>The OpenSpeech Browser includes a logging implementation called
+SBlog that processes logging requests and forwards the results to
+one or more log listeners (C callbacks) for output. <p>
+
+<P>Reference log listeners are provided in source form that output errors and
+diagnostic messages to a file and optionally the console, with event
+messages being output to the OpenSpeech Recognizer event log file. See
+src/HW/client/api/SBlogListeners.cpp in the distribution for these 
+reference listeners, which are built into SBclient.dll. <p>
+</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

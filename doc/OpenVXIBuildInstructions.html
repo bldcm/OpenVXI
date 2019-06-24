@@ -1,0 +1,471 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./OpenVXIBuildInstructions_files/filelist.xml">
+<title>OSB/OpenVXI Build Instructions</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:LastAuthor>Matt Panaccione</o:LastAuthor>
+  <o:Revision>11</o:Revision>
+  <o:TotalTime>48</o:TotalTime>
+  <o:Created>2003-10-17T15:44:00Z</o:Created>
+  <o:LastSaved>2003-10-17T18:04:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>608</o:Words>
+  <o:Characters>3469</o:Characters>
+  <o:Company>Speechworks</o:Company>
+  <o:Lines>28</o:Lines>
+  <o:Paragraphs>6</o:Paragraphs>
+  <o:CharactersWithSpaces>4260</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"\FF2D\FF33 \660E\671D";
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.EmailStyle18
+	{mso-style-type:personal;
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:Arial;
+	color:windowtext;}
+span.EmailStyle19
+	{mso-style-type:personal;
+	mso-ansi-font-size:10.0pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:windowtext;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoPlainText align=center style='text-align:center'><b><span
+style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Arial Black";
+mso-fareast-font-family:"MS Mincho"'>OSB/OpenVXI Build Instructions<o:p></o:p></span></b></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>1. Third
+Party Software: <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'>All third party software must be downloaded the compiled prior to
+building OpenVXI 3.0. Build instructions are provided in the third party software
+distribution package. The OpenVXI team has only tested/built with the versions
+listed below, we highly recommend that you use these versions. The OpenVXI
+source code may need to be modified to work with different versions, problems
+with different versions may include build errors or robustness issues.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>2. Linux<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'>* Requirements: <o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">  </span>- gcc version 3.2.2 or
+later<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">  </span>- <a
+href="http://xml.apache.org/xerces-c/index.html">Xerces Version 2.3.0</a><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">  </span>- <a
+href="http://www.mozilla.org/js/spidermonkey/">SpiderMonkey 1.5rc5</a><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">  </span>- Perl 5.6 or later<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>* Environment variables:<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>The following environment
+variables must be set prior of building<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>OpenVXI 3.0 sources.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- SWISBSDK points to the
+baseline of OpenVXI 3.0 for the build environment<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">   </span>The baseline structure
+must be created as following:<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">   </span>$(SWISBSDK)/bin,
+$(SWISBSDK)/lib, $(SWISBSDK)/include, $(SWISBSDK)/config<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- XERCESDIR points to the
+root directory of pre-compiled Xerces 2.3<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- SPIDERMONKEYDIR points
+to the root directory of pre-compiled SpiderMonkey 1.5rc5<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>* Build and Build order:<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>To build OpenVXI 3.0
+sources, cd to each component in the order outlined below, and carry out the
+following commands: gmake or gmake all to build, gmake clean to clean.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>After a successful build,
+all relevant files will be appropriately copied to the baseline.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'>By default debug libraries are built, specify CFG=release or
+CFG=debug on the gmake command line to explicitly choose which build type to
+produce.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>To ensure a successful
+build, the following order must be followed:<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'>cd $SWISBSDK/lib<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'>- VXIinterfaces<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- swichar<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- trd<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- value<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- log<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- cache<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- inet<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- VXI<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>3. Windows<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes"> </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'><span
+style="mso-spacerun: yes"> </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>* Requirements: <o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">  </span>- MSVC++ 6.0<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">  </span>- <a
+href="http://xml.apache.org/xerces-c/index.html">Xerces Version 2.3.0</a><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">  </span>- <a
+href="http://www.mozilla.org/js/spidermonkey/">SpiderMonkey 1.5rc5</a><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">  </span>- <a
+href="http://www.openssl.org/">OpenSSL 0.9.7b</a><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:42.0pt'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'>- Perl 5.6 or later<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:42.0pt'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'>- A third party STL library (MSVC’s STL has known robustness and
+threading problems, we do not recommend using that STL library. The dsp files
+may need to be modified to build with your STL library of choice, by default
+MSVC’s STL library will be used. The OpenVXI team internally tests with a
+commercial STL library, we are looking into testing with an open source STL
+library for future builds).<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>* Environment variables:<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>The following environment
+variables must be set prior of building<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>OpenVXI 3.0 sources.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- SWISBSDK points to the
+baseline of OpenVXI 3.0 for the build environment.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">   </span>The baseline structure
+must be created as following:<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">   </span>$(SWISBSDK)\bin,
+$(SWISBSDK)\lib, $(SWISBSDK)\include, $(SWISBSDK)\config<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- XERCESDIR points to the
+root directory of pre-compiled Xerces 2.3.0<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- SPIDERMONKEYDIR points
+to the root directory of pre-compiled SpiderMonkey 1.5rc5<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- OPENSSLDIR points to the
+root directory of pre-compiled OpenSSL 0.9.7b<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>* Build and Build order:<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>To build OpenVXI 3.0
+sources, navigate to each component directory in order outlined below and open
+the necessary dsp file(s). Navigate to Build menu, select Batch Build then
+check the appropriate build mode, then click Rebuild All.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>After a successful build,
+all relevant files will be appropriately copied to the baseline<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>To ensure a successful
+build, the following order must be followed (there may be multiple dsp files in
+each directory, make sure you build everything):<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- VXIinterfaces<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- swichar<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- trd<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- value<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- log<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- cache<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- inet<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes"> </span>- VXI<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'><span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'>4. Other OS
+Build instructions<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"MS Mincho"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"MS Mincho"'>OpenVXI does not explicitly support or test with other OS’s at
+this time. If an integrator would like to support another OS we would recommend
+starting with the Linux build instructions and Makefiles as a base. From time
+to time we have incorporated changes integrators have done to support other
+OS’s when practical. Please post any OS related changes to the Open VXI mailing
+list (</span><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
+mso-fareast-font-family:"MS Mincho"'><a href="mailto:vxi-discuss@speechinfo.org">vxi-discuss@speechinfo.org</a></span><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"MS Mincho"'>) for consideration in future versions of
+OpenVXI.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

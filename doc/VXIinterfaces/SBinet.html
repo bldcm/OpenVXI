@@ -1,0 +1,65 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">SBinet</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>SBinet implementation of VXIinet </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBINET_USER_AGENT_NAME_DEFAULT"></A>
+<A HREF=SBINET_USER_AGENT_NAME_DEFAULT.html><B>SBINET_USER_AGENT_NAME_DEFAULT</B></A></TD><TD><BR>
+<I> Default value for the User Agent Name parameter of SBinetInit()</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBinetInit"></A>
+<A HREF=SBinetInit.html><B>SBinetInit</B></A></TD><TD><BR>
+<I> Global platform initialization of SBinet</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBinetInitEx"></A>
+<A HREF=SBinetInitEx.html><B>SBinetInitEx</B></A></TD><TD><BR>
+<I> Global platform initialization (extended version) of SBinet.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBinetShutDown"></A>
+<A HREF=SBinetShutDown.html><B>SBinetShutDown</B></A></TD><TD><BR>
+<I> Global platform shutdown of SBinet</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBinetCreateResource"></A>
+<A HREF=SBinetCreateResource.html><B>SBinetCreateResource</B></A></TD><TD><BR>
+<I> Create a new inet service handle</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBinetDestroyResource"></A>
+<A HREF=SBinetDestroyResource.html><B>SBinetDestroyResource</B></A></TD><TD><BR>
+<I> Destroy the interface and free internal resources.</I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+SBinet interface, and implementation of the VXIinet abstract
+interface for Internet functionality including HTTP requests, local
+file access, URL caching, memory buffer caching, and cookie
+access. <p>
+
+<P>The interface is a synchronous interface based on the ANSI/ISO C
+standard file I/O interface, the only exception is that pre-fetches are
+asynchronous. The client of the interface may use this in an
+asynchronous manner by using non-blocking I/O operations, creating
+threads, or by invoking this from a separate server process. <p>
+
+<P>This implementation currently does NOT support INET_MODE_WRITE for
+http:// access (HTTP PUT), and only supports http://, file://, and
+OS dependant paths.
+
+<P>There is one Internet interface per thread/line.</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,37 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIlogResult.html">VXIlogResult</A> <A HREF="#DOC.DOCU">EventVector</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIlogInterface.html">VXIlogInterface</A>* pThis,<BR>&nbsp; VXIunsigned eventID,<BR>&nbsp; const VXIVector* keys,<BR>&nbsp; const VXIVector* values)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Log an event (VXIVector variant) NOTE: This is only available as of version 1.1 of the VXIlogInterface, use LOG_EVENT_VECTOR_SUPPORTED( ) to determine availability. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Same as <a href="Event.html"> Event </a>, but a vector of keys and
+a vector of values is supplied as arguments to make it possible
+to build dynamic lists of key/value pairs for logging (such as
+event logging of recognition results)
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>eventID</B> -       [IN] <!1><A HREF="Event.html">Event</A> number to <!1><A HREF="log.html">log</A>, this is mapped to a
+localized event name that is placed in the event
+log. It is critical that this provide unambiguous
+information about the nature of the event. See 
+the top of this file for eventID allocation rules.
+<BR><B>keys</B> -          [IN] Key names for the event <!1><A HREF="VXIscEventData.html#DOC.8.3.7.2">data</A>, where keys[i]
+is the key for the value in value[i]. Each key
+must be a VXIString.
+<BR><B>values</B> -        [IN] Values for the event data. Each value must
+be a VXIInteger, VXIFloat, VXIString, or VXIPtr.
+<BR><DT><B>Returns:</B><DD>  VXIlog_RESULT_SUCCESS on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

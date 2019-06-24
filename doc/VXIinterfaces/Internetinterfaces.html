@@ -1,0 +1,69 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">Internet interfaces</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>VXIinet, VXIcache, and VXIjsi interfaces </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIinet"></A>
+<A HREF=VXIinet.html><B>VXIinet</B></A></TD><TD><BR>
+<I>Internet Interface </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBinet"></A>
+<A HREF=SBinet.html><B>SBinet</B></A></TD><TD><BR>
+<I>SBinet implementation of VXIinet </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIcache "></A>
+<A HREF=VXIcache.html><B>VXIcache </B></A></TD><TD><BR>
+<I>Cache Interface  </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBcache"></A>
+<A HREF=SBcache.html><B>SBcache</B></A></TD><TD><BR>
+<I>SBcache implementation of VXIcache </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIjsi"></A>
+<A HREF=VXIjsi.html><B>VXIjsi</B></A></TD><TD><BR>
+<I>ECMAScript (JavaScript) Engine Interface </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="SBjsi"></A>
+<A HREF=SBjsi.html><B>SBjsi</B></A></TD><TD><BR>
+<I>SBjsi implementation of VXIjsi </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+The OpenSpeech Browser requires a number of basic
+foundational components to functions including: Internet I/O,
+caching, and ECMAScript execution. These services are provided by 
+the VXIinet, VXIcache, and VXIjsi interfaces respectively. <p>
+
+<P>The OpenSpeech Browser implements the VXIinet interface using the
+W3C Libwww open source Internet library. This implementation provides
+for document and prompt access through http:// and local files, as
+well as the ability to submit (POST) information via http://. <p>
+
+<P>The OpenSpeech Browser implements the VXIcache interface using the
+W3C Libwww open source Internet library as well. This implementation
+provides on-disk caching of compiled grammars using a simple FIFO
+algorithm, where the cache persists between runs of the platform. <p>
+
+<P>The OpenSpeech Browser implements the VXIjsi interface using the
+Mozilla SpiderMonkey open source ECMAScript (JavaScript) library.
+This implementation allows manipulating ECMAScript variables as
+well as executing arbitrary ECMAScript blocks. <p>
+</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

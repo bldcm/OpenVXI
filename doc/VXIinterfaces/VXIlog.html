@@ -1,0 +1,224 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">VXIlog</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Abstract interface for logging errors, diagnostic logging, and event logging. </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIlogEvent"></A>
+<A HREF=VXIlogEvent.html><B>VXIlogEvent</B></A></TD><TD><BR>
+<I>Standard VXIlog events </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="LOG_EVENT_VECTOR_SUPPORTED"></A>
+<A HREF=VXIlog.html><B>LOG_EVENT_VECTOR_SUPPORTED</B></A></TD><TD><BR>
+<I>Macros to determine the availability of new methods</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIlogResult"></A>
+<A HREF=VXIlogResult.html><B>VXIlogResult</B></A></TD><TD><BR>
+<I>Result codes for interface methods </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIlogInterface"></A>
+<A HREF=VXIlogInterface.html><B>VXIlogInterface</B></A></TD><TD><BR>
+<I>VXIlog interface for logging </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+
+<P><ul>
+The VXIlog Facility supports the following types of log streams:
+
+<P><li><b> Error stream:</b><br/>
+Used to report system faults (errors) and possible system faults
+(warnings) to the system operator for diagnosis and repair. Errors
+are reported by error numbers that are mapped to text with an
+associated severity level. This mapping may be maintained in a
+separate XML document.  This allows integrators to localize and
+customize the text without code changes, and also allows integrators
+and developers to review and re-define severity levels without code
+changes. Optional attribute/value pairs are used to convey details
+about the fault, such the file or URL that is associated with the
+fault.
+</li>
+
+<P><li><b>Diagnostic stream: </b><br/>
+Used by developers and support staff to trace and diagnose system
+behavior. Diagnostic messages are hard-coded text since they are
+private messages that are not intended for system operator
+use. Diagnostic messages are all associated with developer defined
+"tags" for grouping, where each tag may be independently
+enabled/disabled. It is guaranteed that diagnostic logging will have
+little or no performance impact if the tag is disabled, meaning that
+developers should be generous in their insertion of diagnostic log
+messages. These will be disabled by default, but specific tags can
+then be enabled for rapid diagnosis with minimal performance impact
+when issues arise.
+</li>
+
+<P><li><b>Event stream: </b><br/>
+Summarizes normal caller activity in order to support service
+bureau billing; reporting for capacity planning, application and
+recognition monitoring, and caller behavior trending; and traces of
+individual calls for application tuning.  Events are reported by
+event numbers that are mapped to event names. Optional
+attribute/value pairs are used to convey details about the event,
+such as the base application for a new call event.
+</li>
+
+<P><li><b>Content stream: </b><br/>
+The content stream is not really a seperate conceptual stream: it
+is merely a mechanism to log large blocks of data (BLOBs) in a 
+flexible and efficient manner, for example diagnostic logging of
+the VoiceXML page being executed, or event logging of the audio
+input for recognition. To log this information, a request to
+open a content stream handle is made, then the data is written
+to that stream handle. Next the client uses a key/value pair
+returned by the VXIlog implementation to cross-reference the
+content within an appropriate error, diagnostic, or event log
+entry. This mechanism gives the VXIlog implementation high
+flexibility: the implementation may simply write each request
+to a new file and return a cross-reference key/value pair that
+indicates the file path (key = "URL", value = <path>), or may
+POST the data to a centralized web server, or may write each 
+request to a database. The system operator console software
+may then transparently join the error, diagnostic, and event
+log streams with the appropriate content data based on the
+key/value pair.
+</li>
+</ul>
+<p>
+
+<P>Across all streams, the log implementation is responsible for
+automatically supplying the following information in some manner
+(possibly encoded into a file name, possibly in a data header,
+possibly as part of each log message) for end consumer use:
+<ul>
+<li> timestamp </li>
+<li> channel name and/or number </li>
+<li> host name </li>
+<li> application name </li>
+<li> (Error only) error text and severity based on the error number,
+and the supplied module name </li>
+<li> (Diagnostic only) tag name based on the tag number, and the
+supplied subtag name </li>
+<li> (Event only) event name based on the event number </li>
+</ul>
+<p>
+
+<P>In addition, for diagnostic logging the log implementation is
+responsible for defining a mechanism for enabling/disabling messages
+on an individual tag basis without requiring a recompile for use by
+consumers of the diagnostic log. It is critical that Diagnostic( )
+is highly efficient for cases when the tag is disabled: in other
+words, the lookup for seeing if a tag (an integer) is enabled should
+be done using a simple array or some other extremely low-overhead
+mechanism. It is highly recommended that log implementations provide
+a way to enable/disable tags on-the-fly (without needing to restart
+the software), and log implementations should consider providing a
+way to enable/disable tabs on a per-channel basis (for enabling tags
+in tight loops where the performance impact can be large).
+
+<P><p>
+Each of the streams has fields that need to be allocated by
+developers. The rules for each follows. As background, several of
+these fields require following the rules for XML names: it must
+begin with a letter, underscore, or colon, and is followed by one or
+more of those plus digits, hyphens, or periods. However, colons must
+only be used when indicating XML namespaces, and the "vxi" and "swi"
+namespaces (such as "swi:SBprompt") are reserved for use by
+SpeechWorks International, Inc.
+
+<P><p>
+<ul>
+<li><b>Error logging:</b><br/>
+
+<P>Module names (moduleName) must follow XML name rules as described
+above, and must be unique for each implementation of each VXI
+interface. <p>
+
+<P>Error IDs (errorID) are unsigned integers that for each module
+start at 0 and increase from there, allocated by each named module
+as it sees fit. Each VXI interface implementation must provide a
+document that provides the list of error IDs and the recommended
+text (for at least one language) and severity. Severities should
+be constrained to one of three levels: "Critical - out of service"
+(affects multiple callers), "Severe - service affecting" (affects
+a single caller), "Warning - not service affecting" (not readily
+apparent to callers, or it is at least fairly likely callers will
+not notice). <p>
+
+<P>Attribute names must follow XML name rules as described
+above. However, these need not be unique for each implementation
+as they are interpreted relative to the module name (and
+frequently not interpreted at all, but merely output). For
+consumer convenience the data type for each attribute name should
+never vary, although most log implementations will not enforce
+this. <p>
+</li>
+
+<P><li><b>Diagnostic logging:</b><br/>
+
+<P>Tags (tagID) are unsigned integers that must be globally unique
+across the entire run-time environment in order to allow VXIlog
+implementations to have very low overhead diagnostic log
+enablement lookups (see above). The recommended mechanism for
+avoiding conflicts with components produced by other developers is
+to make it so the initialization function for your component takes
+an unsigned integer argument that is a tag ID base. Then within
+your component code, allocate locally unique tag ID numbers
+starting at zero, but offset them by the base variable prior to
+calling the VXIlog Diagostic( ) method. This way integrators of
+your component can assign a non-conflicting base as they see
+fit. <p>
+
+<P>There are no restrictions on subtag use, as they are relative to
+the tag ID and most log implementations will merely output them as
+a prefix to the diagnostic text. <p>
+</li>
+
+<P><li><b>Event logging:</b><br/>
+
+<P>Events (eventID) are unsigned integers that are defined by each
+developer as they see fit in coordination with other component
+developers to avoid overlaps.  Globally unique events are required
+to make it easy for event log consumers to parse the log, all
+events should be well-known and well documented. <p>
+
+<P>Attribute names must follow XML name rules as described
+above. However, these need not be unique for each implementation
+as they are interpreted relative to the module name (and
+frequently not interpreted at all, but merely output). For
+consumer convenience the data type for each attribute name should
+never vary, although most log implementations will not enforce
+this. <p> 
+</li>
+
+<P><li><b>Content logging:</b><br/>
+
+<P>Module names (moduleName) must follow XML name rules as described
+above, and must be unique for each implementation of each VXI
+interface. <p>
+
+<P>When a content stream is opened for writing data, a key/value pair
+is returned by the VXIlog interface. This key/value pair must be used
+to cross-reference this data in error, diagnostic, and/or event
+logging messages. <p>
+</li>
+</ul> </BLOCKQUOTE>
+<DL><DT><DT><B>Version:</B><DD>1.0 <br>		       
+
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,72 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIlogResult.html">VXIlogResult</A> <A HREF="#DOC.DOCU">Error</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIlogInterface.html">VXIlogInterface</A>* pThis,<BR>&nbsp; const VXIchar* moduleName,<BR>&nbsp; VXIunsigned errorID,<BR>&nbsp; const VXIchar* format,<BR>&nbsp; ...)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Log an error </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Basic error reporting mechanism.  Errors are reported by
+moduleName, error number, a format, and a varargs argument list. <p>
+
+<P>IMPORTANT: Error details are not free-form, they must be passed
+as a succession of key-value pairs, i.e. a string key followed by
+a value. For example, this format string and arguments is
+correct:<p>
+
+<P>L"%s%i%s%s", L"key1", 911, L"key2", L"value2" <p>
+
+<P>While this one is incorrect (second key missing):<br>
+
+<P>L"%s%i%f", L"key1", 911, (float)22 / 7<p>
+
+<P>Keys must always be specified by a %s, and the key names must
+follow the rules for XML names as summarized at the top of
+this header. Values may be specified by the ANSI C defined
+format parameters for printf( ), including the ability to
+control string widths, number of decimals to output, padding
+etc. There are no restrictions on the variable values, it is
+the responsibility of the logging system to escape the
+variable values if required by the final output stream (such
+as output via XML).<p>
+
+<P>NOTE: Do NOT use %C and %S in the format string for inserting
+narrow character buffers (char and char *) as supported by
+some compilers, as this is not portable and may result in
+system crashes on some UNIX variants if the VXIlog
+implementation uses the compiler supplied printf( ) family of
+functions for handling these variable argument lists.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>moduleName</B> -    [IN] Name of the software module that is 
+outputting the error. See the top of this file
+for moduleName allocation rules.
+<BR><B>errorID</B> -       [IN] <!1><A HREF="Error.html">Error</A> number to <!1><A HREF="log.html">log</A>, this is mapped to 
+localized error text that is displayed to the 
+system operator that has an associated severity
+level. It is CRITICAL that this provides primary, 
+specific, actionable information to the system 
+operator, with attribute/value pairs only used to 
+provide details. See the top of this file for 
+errorID allocation rules.
+<BR><B>format</B> -        [IN] Format string as passed to wprintf( ) (the
+wchar_t version of printf( ) as defined by the
+ANSI C standard) for outputting optional error
+details. This is followed by a variable list of
+arguments supplying variables for insertion into the 
+format string, also as passed to wprintf( ).
+<BR><B>...</B> -           [IN] Arguments matching the error details format
+specified above.
+<BR><DT><B>Returns:</B><DD>  VXIlog_RESULT_SUCCESS on success <BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

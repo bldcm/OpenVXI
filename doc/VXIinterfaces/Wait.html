@@ -1,0 +1,31 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIpromptResult.html">VXIpromptResult</A> <A HREF="#DOC.DOCU">Wait</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIpromptInterface.html">VXIpromptInterface</A>* pThis,<BR>&nbsp; <!1><A HREF="VXIpromptResult.html">VXIpromptResult</A>* playResult)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Wait until all played segments finish playing, blocking </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Note that this stops the current PlayFiller() operation although
+possibly after some delay, see PlayFiller() for more information.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>playResult</B> -  [OUT] Most severe error code resulting from
+a <!1><A HREF="Play.html">Play</A>() operation since the last <!1><A HREF="Wait.html">Wait</A>()
+call, since <!1><A HREF="Play.html">Play</A>() is asynchronous errors
+may have occurred after one or more calls to
+it have returned. Note that this ignores any
+errors resulting from <!1><A HREF="PlayFiller.html">PlayFiller</A>() operations.
+<BR><DT><B>Returns:</B><DD>  VXIprompt_RESULT_SUCCESS on success<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

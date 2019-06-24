@@ -1,0 +1,37 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2><!1><A HREF="VXIscResult.html">VXIscResult</A> <A HREF="#DOC.DOCU">SetProperty</A></H2></TD><TD><H2>(struct <!1><A HREF="VXIscInterface.html">VXIscInterface</A>* pThis,<BR>&nbsp; const VXIchar* propertyName,<BR>&nbsp; const VXIunsigned valueBuffSizeBytes,<BR>&nbsp; const VXIptr value)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Set a property associated with the caller session </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+See the SC_[...] properties as defined above for the standard
+properties, each implementation may define additional properties
+as well.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>propertyName</B> - 	[IN] Name of property to set
+<BR><B>valueBuffSizeBytes</B> - 	[IN] Size of value, in bytes. For the
+standard properties, pass
+wcslen(valueStr) * sizeof(wchar_t)
+<BR><B>value</B> - 		[IN] Value for the property to set. 
+Note this is an untyped pointer, it
+is up to the Session Control implementation
+to define the appropriate type for
+each property (all the standard properties
+are VXIchar * based).
+<BR><DT><B>Returns:</B><DD>  VXIsc_RESULT_SUCCESS on success
+@result VXIsc_RESULT_NON_FATAL_ERROR for an invalid property<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

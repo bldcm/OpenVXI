@@ -1,0 +1,85 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>typedef struct  <A HREF="#DOC.DOCU">VXIjsiInterface</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>VXIjsi interface for ECMAScript evaluation </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GetVersion"></A>
+<A HREF=VXIjsiInterface.html><B>GetVersion</B></A></TD><TD><BR>
+<I>Get the VXI interface version implemented </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GetImplementationName"></A>
+<A HREF=VXIjsiInterface.html><B>GetImplementationName</B></A></TD><TD><BR>
+<I>Get the name of the implementation </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*CreateContext)"></A>
+<A HREF=CreateContext.html><B>(*CreateContext)</B></A></TD><TD><BR>
+<I> Create and initialize a new script context</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*DestroyContext)"></A>
+<A HREF=DestroyContext.html><B>(*DestroyContext)</B></A></TD><TD><BR>
+<I> Destroy a script context, clean up storage if required</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*CreateVarExpr)"></A>
+<A HREF=CreateVarExpr.html><B>(*CreateVarExpr)</B></A></TD><TD><BR>
+<I> Create a script variable relative to the current scope, initialized to an expression</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*CreateVarValue)"></A>
+<A HREF=CreateVarValue.html><B>(*CreateVarValue)</B></A></TD><TD><BR>
+<I> Create a script variable relative to the current scope, initialized to a VXIValue based value</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*SetVarExpr)"></A>
+<A HREF=SetVarExpr.html><B>(*SetVarExpr)</B></A></TD><TD><BR>
+<I> Set a script variable to an expression relative to the current scope</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*SetReadOnly)"></A>
+<A HREF=SetReadOnly.html><B>(*SetReadOnly)</B></A></TD><TD><BR>
+<I> set a script variable read-only to the current scope</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*SetVarValue)"></A>
+<A HREF=SetVarValue.html><B>(*SetVarValue)</B></A></TD><TD><BR>
+<I> Set a script variable to a value relative to the current scope</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*GetVar)"></A>
+<A HREF=GetVar.html><B>(*GetVar)</B></A></TD><TD><BR>
+<I> Get the value of a variable</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*CheckVar)"></A>
+<A HREF=CheckVar.html><B>(*CheckVar)</B></A></TD><TD><BR>
+<I> Check whether a variable is defined (not ECMAScript Undefined)</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*Eval)"></A>
+<A HREF=Eval.html><B>(*Eval)</B></A></TD><TD><BR>
+<I> Execute a script, optionally returning any execution result</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*PushScope)"></A>
+<A HREF=PushScope.html><B>(*PushScope)</B></A></TD><TD><BR>
+<I> Push a new context onto the scope chain (add a nested scope)</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*PopScope)"></A>
+<A HREF=PopScope.html><B>(*PopScope)</B></A></TD><TD><BR>
+<I> Pop a context from the scope chain (remove a nested scope)</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="(*ClearScopes)"></A>
+<A HREF=ClearScopes.html><B>(*ClearScopes)</B></A></TD><TD><BR>
+<I> Reset the scope chain to the global scope (pop all nested scopes)</I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>VXIjsi interface for ECMAScript evaluation </BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

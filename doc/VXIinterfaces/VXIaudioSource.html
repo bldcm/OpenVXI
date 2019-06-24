@@ -1,0 +1,137 @@
+<html>
+<body bgcolor="#ffe4bf" lang=EN-US link=blue vlink=blue>
+<H3><img SRC="../images/SPEECH_LOGO.gif" align="middle"> </img> OpenSpeech Browser</H3>
+<a href="../OpenSpeech_Browser_Getting_Started.pdf"> Getting Started </a> <br>
+<a href="../Architecture.html">Architecture Description </a> <br>
+<a href="../OpenSpeech_Browser_Integration_Guide.pdf"> Integration Guide </a>  <br>
+<p>Copyright (c) 1998-2001 SpeechWorks International, Inc. All Rights Reserved.</p>
+<hr WIDTH="100%"><br>
+</body>
+</html>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">VXIaudioSource</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Audio Source Interface </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="AS_BEGIN_END_SESSION_SUPPORTED"></A>
+<A HREF=VXIaudioSource.html><B>AS_BEGIN_END_SESSION_SUPPORTED</B></A></TD><TD><BR>
+<I>Macros to determine the availability of new methods</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIasResult"></A>
+<A HREF=VXIasResult.html><B>VXIasResult</B></A></TD><TD><BR>
+<I> Result codes for interface methods</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIasCallbackResult"></A>
+<A HREF=VXIasCallbackResult.html><B>VXIasCallbackResult</B></A></TD><TD><BR>
+<I> Result codes for event listener callbacks</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="AS_EVENT_ERROR"></A>
+<A HREF=AS_EVENT_ERROR.html><B>AS_EVENT_ERROR</B></A></TD><TD><BR>
+<I> Events returned from the Audio Source as detailed in the Audio Source interface description</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIasEventData"></A>
+<A HREF=VXIasEventData.html><B>VXIasEventData</B></A></TD><TD><BR>
+<I> Event structure for returning audio and/or detailed status information</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIasEventListener"></A>
+<A HREF=VXIasEventListener.html><B>VXIasEventListener</B></A></TD><TD><BR>
+<I> Signature for the event handler called to report Audio Source events, as registered via RegisterEventListener( ).</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="VXIasInterface "></A>
+<A HREF=VXIasInterface.html><B>VXIasInterface </B></A></TD><TD><BR>
+<I>Audio Source interface for audio input </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>
+Abstract interface for obtaining audio (speech) from the caller via
+a telephony interface, where the audio is provided as in-memory
+streaming audio delivered via events. <p>
+
+<P>The Audio Source interface must be implemented for each new
+underlying telephony interface, where this is frequently done by a
+third party integrator.
+
+<P>There is one Audio Source interface per telephony channel.
+
+<P>The following table summarizes the events delivered by Audio Source
+implementations.
+
+<P><table border=0>
+<tr><td valign=top><b> AS_EVENT_ERROR </b></td>
+
+<P><td> Reports the Audio Source encountered an error in delivering
+audio during a record operation, typically due to an underlying
+telephony or I/O error. The error must have occurred after a call
+to VXIasTriggerRecord( ) returned with a VXIas_RESULT_SUCCESS
+result code, never during that call or after that call returned
+with an error.  The Audio Source must be returned to an IDLE state
+(the record operation halted) prior to delivering this event.
+
+<P>The event includes a result code that indicates the cause of the
+error. </td></tr>
+
+<P><tr><td valign=top><b> AS_EVENT_RECEIVED </b></td>
+
+<P><td> Reports audio (possibly caller speech) that has been received
+from the telephony interface. This audio should be echo cancelled
+audio (done by the telephony interface or an external device). It
+can optionally be from a first-pass speech detector, which uses
+the telephony interface or an external device to supporess audio
+delivery until potential speech is identified within the audio
+stream (either a noise detector or more intelligent speech detector). 
+
+<P>However, if a first-pass speech detector is used (most commonly to
+reduce CPU consuption by avoiding streaming silence that occurs
+prior to speech), after it detects potential speech it must deliver
+audio starting at 250 msec BEFORE the speech detector fired. This
+allows a higher-level, more sophisticated endpointer integrated
+above this interface to properly scan for low-energy speech that is
+important for recognition that first-pass speech detectors commonly
+chop off. </td></tr>
+
+<P><tr><td valign=top><b> AS_EVENT_STOPPED </b></td>
+
+<P><td> Reports that a record operation has terminated normally,
+either due to the input operation successfully completing or the
+record operation being stopped via TriggerStop( ). Audio Source
+implementations may also choose to automatically stop the record
+operation and return this event on hang-up, although this should
+only be done when this is automatic functionality within the
+underlying telephony library (the client is responsible for rapdily
+calling TriggerStop( ) when hang-up occurs, which in most cases
+simplifies the Audio Source implementation by avoiding session
+control interactions).
+
+<P>The Audio Source must move from the RECORDING state to an IDLE
+state prior to delivering this event. </td></tr>
+
+<P><tr><td valign=top><b> AS_EVENT_OVERFLOW </b></td>
+
+<P><td> Reports the Audio Source has overflowed its internal buffers
+while in a PAUSED state and is throwing out audio (the
+implementation decides whether to discard audio first-in-first-out
+or last-in-first-out). This will not be reported again until the
+record operation is resumed and then paused again. The record
+operation will otherwise proceed normally once resumed. The PAUSE
+state was entered due to the event listener returning
+VXIasCb_RESULT_PAUSE_AUDIO for an AS_EVENT_RECEIVED event.
+</td></tr>
+
+<P><tr><td valign=top><b> AS_EVENT_LOST </b></td>
+
+<P><td> Reports the Audio Source has detected some audio data was
+lost, such as dropped packets on a Voice over IP (VoIP) network. The
+event reports the number of bytes lost and the sequence number of
+the packet that was lost.
+</td></tr>
+</table> </BLOCKQUOTE>
+<DL><DT><DT><B>Version:</B><DD>1.0
+
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>
